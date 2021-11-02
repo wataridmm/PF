@@ -1,24 +1,52 @@
-# README
+# 備品管理、予約アプリ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
 
-Things you may want to cover:
+イベント運営会社の社員が備品や車の管理や予約をするアプリです。
 
-* Ruby version
+### サイトテーマ
 
-* System dependencies
+社員としてログインするユーザーが、自身 n の現場で必要な備品を予約するサイトです。
 
-* Configuration
+### テーマを選んだ理由
 
-* Database creation
+前職では手書きの備品チェックシートで全てを管理していたため、会場が別なのに備品の予約合計数が
+在庫総数を上回ったりしてしまうことがありました。
+それをオンラインで予約、管理できるサイトがあれば便利だと思い、作ってみたいと思いました。
 
-* Database initialization
+### ターゲットユーザ
 
-* How to run the test suite
+自社社員、(閲覧用としてバイト向けページ)実装するかわからない
 
-* Services (job queues, cache servers, search engines, etc.)
+### 主な利用シーン
 
-* Deployment instructions
+社員　自分の担当の現場の備品や車の予約、確認をしたい時
+バイト　将来どんな現場があるかを確認するため　実装するかわからない
 
-* ...
+## 設計書
+
+<...>
+
+## チャレンジ要素一覧
+
+<https://docs.google.com/spreadsheets/d/1E4Quehglf9PxM1XTE-ft2X5-hJ5dmoJhsI-UJlgzVmY/edit#gid=0>
+
+## 開発環境
+
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JS ライブラリ：jQuery
+- IDE：Cloud9
+
+## 使用素材
+
+- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名と URL を明記してください。
+- 使用しない場合は、使用素材の項目を README から削除してください。
+
+チャレンジ要素一覧
+https://docs.google.com/spreadsheets/d/1JdB1Yyvz4FAzlOMquIPzr5xoF4R-sM9w9uTw3DODZwo/edit?usp=sharing
+
+AI 機能
+社員　各会場、イベントに対するレビューの解析
+バイト　各会場、イベントに対するレビューの解析(実装するかわからない)
