@@ -45,9 +45,6 @@
 - 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名と URL を明記してください。
 - 使用しない場合は、使用素材の項目を README から削除してください。
 
-チャレンジ要素一覧
-https://docs.google.com/spreadsheets/d/1JdB1Yyvz4FAzlOMquIPzr5xoF4R-sM9w9uTw3DODZwo/edit?usp=sharing
-
 AI 機能
 社員　各会場、イベントに対するレビューの解析
 バイト　各会場、イベントに対するレビューの解析(実装するかわからない)
