@@ -43,7 +43,7 @@ Venue Voyage
 
 ## 設計書
 
-<...>
+<https://docs.google.com/spreadsheets/d/1kiIBwnBqA0Nl40crMbaK-gPzsD89j7BeahS1OJR6eV8/edit?usp=sharing>
 
 ## チャレンジ要素一覧
 
