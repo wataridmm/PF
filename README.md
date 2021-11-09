@@ -47,11 +47,11 @@ Venue Voyage
 
 ## 設計書
 
-<https://docs.google.com/spreadsheets/d/1kiIBwnBqA0Nl40crMbaK-gPzsD89j7BeahS1OJR6eV8/edit?usp=sharing>
+<https://docs.google.com/spreadsheets/d/1kiIBwnBqA0Nl40crMbaK-gV2zsD89j7BeahS1OJR6eV8/edit?usp=sharing>
 
 ## チャレンジ要素一覧
 
-<https://docs.google.com/spreadsheets/d/1JdB1Yyvz4FAzlOMquIPzr5xoF4R-sM9w9uTw3DODZwo/edit?usp=sharing>
+<https://docs.google.com/spreadsheets/d/1JdB1Yyvz4FAzlOMquIV2zr5xoF4R-sM9w9uTw3DODZwo/edit?usp=sharing>
 
 ## 開発環境
 
