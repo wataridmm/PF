@@ -70,3 +70,5 @@ group :production do
 end
 
 gem 'rename'
+
+gem 'devise'
