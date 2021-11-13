@@ -6,6 +6,7 @@ class CreateWorkerSchedules < ActiveRecord::Migration[5.2]
       t.integer :worker_id, null: false
       t.text :comment
 
+
       t.timestamps
     end
   end
