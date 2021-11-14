@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_13_201510) do
+ActiveRecord::Schema.define(version: 2021_11_13_212757) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -36,6 +36,84 @@ ActiveRecord::Schema.define(version: 2021_11_13_201510) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_customers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.integer "venue_id", null: false
+    t.integer "prefecture_id", null: false
+    t.string "name", null: false
+    t.text "comment"
+    t.datetime "date", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "item_stocks", force: :cascade do |t|
+    t.integer "item_id", null: false
+    t.integer "stock", null: false
+    t.integer "status", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "comment"
+    t.boolean "is_active", default: true, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "prefectures", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "request_details", force: :cascade do |t|
+    t.integer "request_id", null: false
+    t.integer "worker_id", null: false
+    t.integer "item_id", null: false
+    t.integer "venue_id"
+    t.integer "amount", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.integer "worker_id", null: false
+    t.integer "status", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "venue_comments", force: :cascade do |t|
+    t.integer "customer_id"
+    t.integer "worker_id"
+    t.integer "venue_id", null: false
+    t.text "comment", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "venues", force: :cascade do |t|
+    t.integer "prefecture_id", null: false
+    t.integer "image_id", null: false
+    t.string "name", null: false
+    t.text "introduction", null: false
+    t.string "station", null: false
+    t.string "status"
+    t.boolean "is_active", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "worker_schedules", force: :cascade do |t|
+    t.integer "event_id", null: false
+    t.integer "worker_id", null: false
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "workers", force: :cascade do |t|
