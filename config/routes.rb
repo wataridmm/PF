@@ -21,8 +21,10 @@ Rails.application.routes.draw do
     get 'venues/index'
     get 'venues/new'
     post 'venues' => 'venues#create'
-    get 'venues/show'
-    get 'venues/edit'
+    get 'venues/:id' => 'venues#show', as: 'venue'
+    get 'venues/:id/edit' => 'venues#edit', as: 'edit_venue'
+    patch 'venues/:id' => 'venues#update', as: 'update_venue'
+    delete 'venues/:id' => 'venues#destroy', as: 'destroy_venue'
   end
   namespace :admin do
     get 'items/new'

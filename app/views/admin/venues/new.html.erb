@@ -1,17 +1,16 @@
 <h1>会場登録画面</h1>
   <%= form_with model: @venue, url:'/admin/venues', local:true do |f| %>
-
+    <%= render 'layouts/error_messages', resource: @venue %>
     <h4>会場名</h4>
       <%= f.text_field :name %>
     <h4>最寄駅</h4>
       <%= f.text_field :station %>
     <h4>説明</h4>
       <%= f.text_area :introduction %>
-    <!--<h4>ステータス</h4>-->
-    <!--<%#= f.text_field :status %>-->
-    <!--<h4>アクティブ</h4>-->
-    <!--<%#= f.text_field :is_active %>-->
+    <h4>ステータス</h4>
+    <%= f.text_field :status %>
+    <h4>アクティブ</h4>
+    <%= f.select :is_active, [['非稼働',0],['稼働',1]], { include_blank: true, selected: 0 } %>
+    <%= f.submit '作成' %>
 
-  <%= f.submit '作成' %>
-  
 <% end %>

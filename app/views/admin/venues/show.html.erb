@@ -1,2 +1,8 @@
-<h1>Admin::Venues#show</h1>
-<p>Find me in app/views/admin/venues/show.html.erb</p>
+<h1>会場詳細</h1>
+<h3><%= @venue.name %></h3>
+<h3><%= @venue.station %></h3>
+<h3><%= @venue.introduction %></h3>
+<h3><%= @venue.status %></h3>
+<h3><%= @venue.is_active %></h3>
+<%= link_to "編集", admin_edit_venue_path(@venue.id) %>
+<%= link_to "削除", admin_destroy_venue_path(@venue.id), method: :delete, "data-confirm" => "削除してもよろしいですか？" %>

@@ -1,2 +1,10 @@
-<h1>Admin::Venues#index</h1>
-<p>Find me in app/views/admin/venues/index.html.erb</p>
+<h1>会場一覧</h1>
+<% @venues.each do |venue| %>
+<h3>会場詳細</h3>
+<span><%= venue.name %></span>
+<span><%= venue.station %></span>
+<span><%= venue.introduction %></span>
+<span><%= venue.status %></span>
+<span><%= venue.is_active %></span>
+<%= link_to "詳細", admin_venue_path(venue.id) %>
+<% end %>

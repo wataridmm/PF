@@ -1,5 +1,6 @@
 class Admin::VenuesController < ApplicationController
   def index
+    @venues = Venue.all
   end
 
   def new
@@ -8,14 +9,30 @@ class Admin::VenuesController < ApplicationController
 
   def create
     @venue = Venue.new(venue_params)
-    @venue.save ? (redirect_to admin_venues_index_path(@venue)) : (render :new)
+    @venue.save ? (redirect_to admin_venues_index_path) : (render :new)
   end
 
   def show
+    @venue = Venue.find(params[:id])
   end
 
   def edit
+    @venue = Venue.find(params[:id])
   end
+
+  def update
+    venue = Venue.find(params[:id])
+    venue.update(venue_params)
+    redirect_to admin_venue_path(venue.id)
+  end
+
+  def destroy
+    venue = Venue.find(params[:id])
+    venue.destroy
+    redirect_to admin_venues_index_path
+  end
+
+
 
   private
 
