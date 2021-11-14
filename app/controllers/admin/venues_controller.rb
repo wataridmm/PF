@@ -8,7 +8,7 @@ class Admin::VenuesController < ApplicationController
 
   def create
     @venue = Venue.new(venue_params)
-    @venue.save ? (redirect_to admin_venues_index_path(@venue)) : (render :new)
+    @venue.save ? (redirect_to admin_venues_index_path) : (render :new)
   end
 
   def show
