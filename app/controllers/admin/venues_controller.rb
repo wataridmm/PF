@@ -26,6 +26,12 @@ class Admin::VenuesController < ApplicationController
     redirect_to admin_venue_path(venue.id)
   end
 
+  def destroy
+    venue = Venue.find(params[:id])
+    venue.destroy
+    redirect_to admin_venues_index_path
+  end
+
 
 
   private
