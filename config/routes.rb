@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
   namespace :admin do
+    get 'requests/index'
+    get 'requests/show'
+    get 'requests/edit'
+  end
+  namespace :admin do
     get 'workers/index'
     get 'workers/new'
     get 'workers/show'
@@ -16,6 +21,7 @@ Rails.application.routes.draw do
     get 'items/new'
     get 'items/index'
   end
+  
   namespace :admin do
     get 'top' => 'homes#top', as: 'top'
   end
