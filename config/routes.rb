@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   namespace :admin do
     get 'venues/index'
     get 'venues/new'
+    post 'venues' => 'venues#create'
     get 'venues/show'
     get 'venues/edit'
   end
@@ -27,7 +28,7 @@ Rails.application.routes.draw do
     get 'items/new'
     get 'items/index'
   end
-  
+
   namespace :admin do
     get 'top' => 'homes#top', as: 'top'
   end
