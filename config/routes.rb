@@ -1,6 +1,35 @@
 Rails.application.routes.draw do
 
   namespace :admin do
+    get 'events/index'
+    get 'events/new'
+    get 'events/show'
+    get 'events/edit'
+  end
+  namespace :admin do
+    get 'requests/index'
+    get 'requests/show'
+    get 'requests/edit'
+  end
+  namespace :admin do
+    get 'workers/index'
+    get 'workers/new'
+    get 'workers/show'
+    get 'workers/edit'
+  end
+  namespace :admin do
+    get 'venues/index'
+    get 'venues/new'
+    post 'venues' => 'venues#create'
+    get 'venues/show'
+    get 'venues/edit'
+  end
+  namespace :admin do
+    get 'items/new'
+    get 'items/index'
+  end
+
+  namespace :admin do
     get 'top' => 'homes#top', as: 'top'
   end
   devise_for :worker, skip: [:registrations, :passwords] , controllers: {
