@@ -1,5 +1,6 @@
 class Admin::VenuesController < ApplicationController
   def index
+    @venues = Venue.all
   end
 
   def new
