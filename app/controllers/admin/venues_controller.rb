@@ -17,7 +17,16 @@ class Admin::VenuesController < ApplicationController
   end
 
   def edit
+    @venue = Venue.find(params[:id])
   end
+
+  def update
+    venue = Venue.find(params[:id])
+    venue.update(venue_params)
+    redirect_to admin_venue_path(venue.id)
+  end
+
+
 
   private
 

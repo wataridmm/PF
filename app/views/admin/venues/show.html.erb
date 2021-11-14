@@ -4,3 +4,4 @@
 <h3><%= @venue.introduction %></h3>
 <h3><%= @venue.status %></h3>
 <h3><%= @venue.is_active %></h3>
+<%= link_to "編集", admin_edit_venue_path(@venue.id) %>

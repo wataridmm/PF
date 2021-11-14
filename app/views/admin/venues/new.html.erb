@@ -10,7 +10,7 @@
     <h4>ステータス</h4>
     <%= f.text_field :status %>
     <h4>アクティブ</h4>
-    <%= f.select :is_active, [['稼働',0],['非稼働',1]], { include_blank: true, selected: 0 } %>
+    <%= f.select :is_active, [['非稼働',0],['稼働',1]], { include_blank: true, selected: 0 } %>
     <%= f.submit '作成' %>
 
 <% end %>

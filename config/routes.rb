@@ -22,7 +22,8 @@ Rails.application.routes.draw do
     get 'venues/new'
     post 'venues' => 'venues#create'
     get 'venues/:id' => 'venues#show', as: 'venue'
-    get 'venues/edit'
+    get 'venues/:id/edit' => 'venues#edit', as: 'edit_venue'
+    patch 'venues/:id' => 'venues#update', as: 'update_venue'
   end
   namespace :admin do
     get 'items/new'
