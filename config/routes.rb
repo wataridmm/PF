@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
   namespace :admin do
+    get 'items/new'
+    get 'items/index'
+  end
+  namespace :admin do
     get 'top' => 'homes#top', as: 'top'
   end
   devise_for :worker, skip: [:registrations, :passwords] , controllers: {
