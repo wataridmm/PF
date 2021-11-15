@@ -6,5 +6,6 @@ class Venue < ApplicationRecord
   validates :status, presence: true
 
 
+
   belongs_to :prefecture
 end
