@@ -6,3 +6,4 @@
 <h3><%= @venue.is_active %></h3>
 <%= link_to "編集", admin_edit_venue_path(@venue.id) %>
 <%= link_to "削除", admin_destroy_venue_path(@venue.id), method: :delete, "data-confirm" => "削除してもよろしいですか？" %>
+<%= link_to "会場一覧に戻る", admin_venues_index_path %>

@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 2021_11_13_212757) do
 
   create_table "prefectures", force: :cascade do |t|
     t.string "name", null: false
+    t.string "slug", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -12,3 +12,4 @@
   <%= f.select :is_active, [['非稼働',0],['稼働',1]], { include_blank: true, selected: 0 } %>
   <%= f.submit '更新' %>
 <% end %>
+<%= link_to "戻る", admin_venue_path(@venue.id) %>
