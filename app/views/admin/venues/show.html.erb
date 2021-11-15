@@ -1,9 +1,29 @@
-<h1>会場詳細</h1>
-<h3><%= @venue.name %></h3>
-<h3><%= @venue.station %></h3>
-<h3><%= @venue.introduction %></h3>
-<h3><%= @venue.status %></h3>
-<h3><%= @venue.is_active %></h3>
-<%= link_to "編集", admin_edit_venue_path(@venue.id) %>
-<%= link_to "削除", admin_destroy_venue_path(@venue.id), method: :delete, "data-confirm" => "削除してもよろしいですか？" %>
-<%= link_to "会場一覧に戻る", admin_venues_index_path %>
+<div class="container p-5">
+  <h1>会場詳細</h1>
+	<table class="table table-striped">
+	  <thead>
+      <tr>
+          <th>会場ID</th>
+          <th>会場名</th>
+          <th>県名</th>
+          <th>最寄駅</th>
+          <th>会場説明</th>
+          <th>ステータス</th>
+      </tr>
+    </thead>
+		<tbody>
+			<tr>
+				<td><%= @venue.id %></td>
+				<td><%= @venue.name %></td>
+				<td><%= @venue.prefecture.name %></td>
+				<td><%= @venue.station %></td>
+				<td><%= @venue.introduction %></td>
+				<td><%= @venue.status %></td>
+				<td><%#= @venue.is_active %></td>
+				<td><%= link_to "編集", admin_edit_venue_path(@venue.id) , class: "btn btn-success" %></td>
+				<td><%= link_to "削除", admin_destroy_venue_path(@venue.id), method: :delete, "data-confirm" => "削除してもよろしいですか？", class: "btn btn-danger" %></td>
+			</tr>
+		</tbody>
+	</table>
+	<%= link_to "会場一覧に戻る", admin_venues_index_path %>
+	</div>

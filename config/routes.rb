@@ -12,9 +12,11 @@ Rails.application.routes.draw do
     get 'requests/edit'
   end
   namespace :admin do
-    get 'workers/index'
+    # get 'workers/index'
+    get 'workers' => 'workers#index'
     get 'workers/new'
-    get 'workers/show'
+    # get 'workers/show'
+    get 'workers/:id' => 'workers#show', as: 'worker'
     get 'workers/edit'
   end
   namespace :admin do
