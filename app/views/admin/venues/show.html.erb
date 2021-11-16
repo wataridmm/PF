@@ -19,7 +19,7 @@
 				<td><%= @venue.station %></td>
 				<td><%= @venue.introduction %></td>
 				<td><%= @venue.status %></td>
-				<td><%#= @venue.is_active %></td>
+				<!--<td><%#= @venue.is_active %></td>-->
 				<td><%= link_to "編集", admin_edit_venue_path(@venue.id) , class: "btn btn-success" %></td>
 				<td><%= link_to "削除", admin_destroy_venue_path(@venue.id), method: :delete, "data-confirm" => "削除してもよろしいですか？", class: "btn btn-danger" %></td>
 			</tr>

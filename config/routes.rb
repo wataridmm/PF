@@ -36,7 +36,7 @@ Rails.application.routes.draw do
   namespace :admin do
     get 'top' => 'homes#top', as: 'top'
   end
-  devise_for :worker, skip: [:registrations, :passwords] , controllers: {
+  devise_for :worker, skip: [:passwords] , controllers: {
     sessions: "worker/sessions"
   }
 
