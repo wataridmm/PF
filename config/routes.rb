@@ -17,7 +17,8 @@ Rails.application.routes.draw do
     get 'workers/new'
     # get 'workers/show'
     get 'workers/:id' => 'workers#show', as: 'worker'
-    get 'workers/edit'
+    get 'workers/:id/edit' => 'workers#edit', as: 'edit_worker'
+    patch 'workers/:id' => 'workers#update', as: 'update_worker'
   end
   namespace :admin do
     get 'venues/index'
@@ -37,6 +38,7 @@ Rails.application.routes.draw do
     get 'top' => 'homes#top', as: 'top'
   end
   devise_for :worker, skip: [:passwords] , controllers: {
+    registrations: "worker/registrations",
     sessions: "worker/sessions"
   }
 
