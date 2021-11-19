@@ -1,0 +1,24 @@
+<div class="container p-5">
+  <h1>備品詳細</h1>
+	<table class="table table-striped">
+	  <thead>
+      <tr>
+          <th>備品ID</th>
+          <th>備品名</th>
+          <th>説明</th>
+          <th>ステータス</th>
+      </tr>
+    </thead>
+		<tbody>
+			<tr>
+				<td><%= @item.id %></td>
+				<td><%= @item.name %></td>
+				<td><%= @item.comment %></td>
+				<td><%= @item.is_active %></td>
+				<td><%= link_to "編集", admin_edit_item_path(@item.id) , class: "btn btn-success" %></td>
+				<td><%= link_to "削除", admin_destroy_item_path(@item.id), method: :delete, "data-confirm" => "削除してもよろしいですか？", class: "btn btn-danger" %></td>
+			</tr>
+		</tbody>
+	</table>
+	<%= link_to "備品一覧に戻る", admin_items_path %>
+	</div>

@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
 
   namespace :admin do
+    get 'items/new'
+    get 'items/edit'
+    post 'items' => 'items#create'
+    get 'items' => 'items#index'
+    get 'items/:id' => 'items#show', as: 'item'
+    get 'items/:id/edit' => 'items#edit', as: 'edit_item'
+    patch 'items/:id' => 'items#update', as: 'update_item'
+    delete 'items/:id' => 'items#destroy', as: 'destroy_item'
+  end
+  namespace :admin do
     get 'events/index'
     get 'events/new'
     get 'events/show'
