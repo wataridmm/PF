@@ -1,2 +1,14 @@
-<h1>Admin::Workers#edit</h1>
-<p>Find me in app/views/admin/workers/edit.html.erb</p>
+<h1>社員編集画面</h1>
+社員ID<%= @worker.id %>
+<%= form_with model:@worker, url:"/admin/workers/#{@worker.id}", local:true do |f| %>
+  <h4>社員名</h4>
+    姓  <%= f.text_field :last_name %>
+    名  <%= f.text_field :first_name %>
+    <h4>メールアドレス</h4>
+    <%= f.text_field :email %>
+    <h4>ステータス</h4>
+    <%= f.select :is_deleted, [['有効',0],['退社',1]], { include_blank: true, selected: 0 } %>
+
+  <%= f.submit '更新' %>
+<% end %>
+<%= link_to "戻る", admin_worker_path(@worker.id) %>
