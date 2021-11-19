@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get 'items/new'
-    get 'items/edit'
     post 'items' => 'items#create'
     get 'items' => 'items#index'
     get 'items/:id' => 'items#show', as: 'item'
@@ -22,10 +21,8 @@ Rails.application.routes.draw do
     get 'requests/edit'
   end
   namespace :admin do
-    # get 'workers/index'
     get 'workers' => 'workers#index'
     get 'workers/new'
-    # get 'workers/show'
     get 'workers/:id' => 'workers#show', as: 'worker'
     get 'workers/:id/edit' => 'workers#edit', as: 'edit_worker'
     patch 'workers/:id' => 'workers#update', as: 'update_worker'
