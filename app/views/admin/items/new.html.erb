@@ -1,12 +1,35 @@
 <div class="container p-5">
   <h1>備品登録画面</h1>
   <%= form_with model: @item, url:'/admin/items', local:true do |f| %>
-    <h4>備品名</h4>
-    <%= f.text_field :name %>
-    <h4>説明</h4>
-    <%= f.text_field :comment %>
-    <h4>ステータス</h4>
-    <%= f.select :is_active, [['非稼働',0],['稼働中',1]], { include_blank: true, selected: 0 } %>
-    <%= f.submit '作成' %>
-  <% end %>
+  <table class="admin_item_info item_form">
+			<thead>
+				<tr>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><%= f.label :name, "備品名" %></td>
+					<td><%= f.text_field :name %></td>
+				</tr>
+				<tr>
+					<td><%= f.label :introduction, "説明" %></td>
+					<td><%= f.text_area :comment, rows: 3 %></td>
+				</tr>
+				<tr>
+					<td><%= f.label :is_active, "ステータス" %></td>
+					<td class="select_field">
+					  <%= f.radio_button :is_active, true %>
+						<%= f.label :is_active, "稼働中", class: "text-active" %>
+						<%= f.radio_button :is_active, false %>
+						<%= f.label :is_active, "稼働停止中", class: "text-invalid" %>
+						</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="flex align-center pl5">
+			<%= f.submit "作成", class: "btn btn-primary" %>
+		</div>
+		<% end %>
 </div>

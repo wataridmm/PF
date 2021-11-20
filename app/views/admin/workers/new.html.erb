@@ -1,2 +1,35 @@
-<h1>Admin::Workers#new</h1>
-<p>Find me in app/views/admin/workers/new.html.erb</p>
+<div class="container p-5">
+  <h1>社員登録</h1>
+  <%= form_with model: @worker, url:'/admin/workers', local:true do |f| %>
+  <table class="table table-bordered">
+			<tbody>
+				<tr>
+					<td><%= f.label :name, "姓" %></td>
+					<td><%= f.text_field :last_name, autofocus: true %></td>
+				</tr>
+				<tr>
+				  <td><%= f.label :name, "名" %></td>
+					<td><%= f.text_field :first_name, autofocus: true %></td>
+				</tr>
+				<tr>
+				  <td><%= f.label :email, "メールアドレス" %></td>
+					<td><%= f.email_field :email, autofocus: true %></td>
+				</tr>
+				<tr>
+				  <td><%= f.label :password, "パスワード" %></td>
+					<td><% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "new-password" %></td>
+				</tr>
+				<tr>
+				  <td><%= f.label :password_confirmation, "パスワード確認" %></td>
+				  <td><%= f.password_field :password_confirmation, autocomplete: "new-password" %></td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="flex align-center pl5">
+			<%= f.submit "作成", class: "btn btn-primary" %>
+		</div>
+		<% end %>
+</div>

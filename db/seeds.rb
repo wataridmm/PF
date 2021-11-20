@@ -8,11 +8,14 @@
 
 
 
-
+Prefecture.create(name: '東京', slug: 'tokyo')
+Prefecture.create(name: '神奈川', slug: 'kanagawa')
+Prefecture.create(name: '千葉', slug: 'chiba')
+Prefecture.create(name: '埼玉', slug: 'saitama')
 Prefecture.create(name: '栃木', slug: 'tochigi')
 Prefecture.create(name: '茨城', slug: 'ibaraki')
 Prefecture.create(name: '群馬', slug: 'gunma')
-Prefecture.create(name: '埼玉', slug: 'saitama')
-Prefecture.create(name: '千葉', slug: 'chiba')
-Prefecture.create(name: '東京', slug: 'tokyo')
-Prefecture.create(name: '神奈川', slug: 'kanagawa')
+
+
+
+

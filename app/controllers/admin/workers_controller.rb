@@ -4,6 +4,13 @@ class Admin::WorkersController < ApplicationController
   end
 
   def new
+    @worker = Worker.new
+  end
+
+  def create
+    worker = Worker.new(worker_params)
+    worker.save
+    redirect_to admin_workers_path
   end
 
   def show
@@ -23,7 +30,7 @@ class Admin::WorkersController < ApplicationController
   private
 
   def worker_params
-    params.require(:worker).permit(:last_name, :first_name, :email, :is_deleted)
+    params.require(:worker).permit(:last_name, :first_name, :email, :password, :password_confirmation, :is_deleted)
   end
 
 

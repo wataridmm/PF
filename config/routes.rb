@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     get 'workers/:id' => 'workers#show', as: 'worker'
     get 'workers/:id/edit' => 'workers#edit', as: 'edit_worker'
     patch 'workers/:id' => 'workers#update', as: 'update_worker'
+    post 'workers' => 'workers#create'
   end
   namespace :admin do
     get 'venues/index'
@@ -44,10 +45,18 @@ Rails.application.routes.draw do
   namespace :admin do
     get 'top' => 'homes#top', as: 'top'
   end
+  devise_for :worker, skip: [:passwords] , controllers: {
+    registrations: "worker/registrations",
+    sessions: "worker/sessions"
+  }
 
-  devise_for :customers
-  devise_for :worker
-  devise_for :admin
+  devise_for :customers, skip: [:passwords] ,controllers: {
+    registrations: "public/registrations",
+    sessions: "public/sessions"
+  }
+  devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
+    sessions: "admin/sessions"
+  }
 
   scope module: :public do
     root 'customers#top'
