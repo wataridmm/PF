@@ -34,7 +34,7 @@ class DeviseCreateWorkers < ActiveRecord::Migration[5.2]
 
       t.string :last_name, null: false
       t.string :first_name, null: false
-      t.boolean :is_deleted, null: false, default: false
+      t.boolean :is_deleted, default: false
 
 
       t.timestamps null: false

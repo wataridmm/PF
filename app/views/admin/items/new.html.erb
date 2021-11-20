@@ -23,12 +23,12 @@
 					  <%= f.radio_button :is_active, true %>
 						<%= f.label :is_active, "稼働中", class: "text-active" %>
 						<%= f.radio_button :is_active, false %>
-						<%= f.label :is_active, "稼働停止中", class: "text-invalid" %></td>
+						<%= f.label :is_active, "稼働停止中", class: "text-invalid" %>
+						</td>
 				</tr>
 			</tbody>
 		</table>
-
-			<div class="flex align-center pl5">
+		<div class="flex align-center pl5">
 			<%= f.submit "作成", class: "btn btn-primary" %>
 		</div>
 		<% end %>

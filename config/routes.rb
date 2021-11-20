@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     get 'workers/:id' => 'workers#show', as: 'worker'
     get 'workers/:id/edit' => 'workers#edit', as: 'edit_worker'
     patch 'workers/:id' => 'workers#update', as: 'update_worker'
+    post 'workers' => 'workers#create'
   end
   namespace :admin do
     get 'venues/index'
