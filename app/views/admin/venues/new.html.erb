@@ -1,3 +1,4 @@
+<div class="container p-5">
 <h1>会場登録画面</h1>
   <%= form_with model: @venue, url:'/admin/venues', local:true do |f| %>
     <%= render 'layouts/error_messages', resource: @venue %>
@@ -5,7 +6,7 @@
       <%= f.text_field :name %>
     <h4></h4>
       <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name %>
-    
+
     <h4>最寄駅</h4>
       <%= f.text_field :station %>
     <h4>説明</h4>
@@ -17,3 +18,4 @@
     <%= f.submit '作成' %>
 
 <% end %>
+</div>

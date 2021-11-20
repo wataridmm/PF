@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 2021_11_13_212757) do
 
   create_table "events", force: :cascade do |t|
     t.integer "venue_id", null: false
-    t.integer "prefecture_id", null: false
     t.string "name", null: false
     t.text "comment"
     t.datetime "date", null: false
