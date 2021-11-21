@@ -1,6 +1,6 @@
 class Admin::ItemStocksController < ApplicationController
   def index
-    @item_stocks = Item_stock.all
+    @item_stocks = ItemStock.all
   end
 
   def show
@@ -8,7 +8,7 @@ class Admin::ItemStocksController < ApplicationController
   end
 
   def new
-    @item_stocks = Item_stocks.new
+    @item_stocks = ItemStock.new
   end
 
   def create
