@@ -4,17 +4,17 @@ class Admin::ItemStocksController < ApplicationController
   end
 
   def show
-
+    @item_stock = ItemStock.find(params[:id])
   end
 
   def new
-    @item_stocks = ItemStock.new
+    @item_stock = ItemStock.new
   end
 
   def create
-    item_stock = item_stock.new(item_stock_params)
+    item_stock = ItemStock.new(item_stock_params)
     item_stock.save
-    redirect_to admin_itemstocks_path
+    redirect_to admin_item_stocks_path
   end
 
   private
