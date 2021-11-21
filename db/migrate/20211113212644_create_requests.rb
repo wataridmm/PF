@@ -4,7 +4,7 @@ class CreateRequests < ActiveRecord::Migration[5.2]
 
       t.integer :worker_id, null: false
       t.integer :status, null: false
-      
+
       t.timestamps
     end
   end
