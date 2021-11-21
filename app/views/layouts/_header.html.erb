@@ -1,0 +1,18 @@
+<% if admin_signed_in? %>
+      <header class="admin_header">
+        管理者としてログイン中
+      </header>
+    <% elsif worker_signed_in? %>
+      <header>
+        社員<%= current_worker.last_name %>としてログイン中
+      </header>
+    <% elsif customer_signed_in? %>
+      <header>
+        ユーザー<%= current_customer.name %>としてログイン中
+      </header>
+    <% else %>
+      <header>
+        閲覧ユーザー
+      </header>
+    <% end %>
+    <%= link_to 'ログアウトリンク', destroy_worker_session_path, method: :delete %>

@@ -1,0 +1,24 @@
+<div class="container p-5">
+    <h2>会員一覧</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>会員ID</th>
+                <th>ニックネーム</th>
+                <th>メールアドレス</th>
+                <th>ステータス</th>
+            </tr>
+        </thead>
+        <% @customers.each do |customer| %>
+        <tbody>
+            <tr>
+                <td><%= customer.id %></td>
+                <td><%= customer.name %></td>
+                <td><%= customer.email %></td>
+                <td><%= customer.is_deleted %></td>
+            </tr>
+        </tbody>
+        <% end %>
+    </table>
+    <h2><%= link_to "管理者トップ", admin_top_path %></h2>
+</div>
