@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     get 'item_stocks/:id/edit' => 'item_stocks#edit', as: 'edit_item_stock'
     patch 'item_stocks/:id' => 'item_stocks#update', as: 'update_item_stock'
     post 'item_stocks' => 'item_stocks#create'
+    delete 'item_stocks/:id' => 'item_stocks#destroy', as: 'destroy_item_stock'
   end
   namespace :admin do
     get 'customers' => 'customers#index'

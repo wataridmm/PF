@@ -17,6 +17,18 @@ class Admin::ItemStocksController < ApplicationController
     redirect_to admin_item_stocks_path
   end
 
+  def update
+    item_stock = ItemStock.find(params[:id])
+    item_stock.update(item_stock_params)
+    redirect_to admin_item_stock_path(item_stock.id)
+  end
+
+  def destroy
+    item_stock = item_stock.find(params[:id])
+    item_stock.destroy
+    redirect_to admin_item_stocks_path
+  end
+
   private
 
   def item_stock_params

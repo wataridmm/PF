@@ -1,2 +1,23 @@
-<h1>Admin::ItemStocks#show</h1>
-<p>Find me in app/views/admin/item_stocks/show.html.erb</p>
+<div class="container p-5">
+  <h1>備品詳細</h1>
+	<table class="table table-striped">
+	  <thead>
+      <tr>
+          <th>在庫ID</th>
+          <th>備品名</th>
+          <th>在庫数</th>
+          <th>ステータス</th>
+      </tr>
+    </thead>
+		<tbody>
+			<tr>
+				<td><%= @item_stock.id %></td>
+				<td><%= @item_stock.item.name %></td>
+				<td><%= @item_stock.status %></td>
+				<td><%= link_to "編集", admin_edit_item_stock_path(@item_stock.id) , class: "btn btn-success" %></td>
+				<td><%= link_to "削除", admin_destroy_item_stock_path(@item_stock.id), method: :delete, "data-confirm" => "削除してもよろしいですか？在庫として登録されている場合はエラーになりますので、在庫情報を消してからOKを押してください", class: "btn btn-danger" %></td>
+			</tr>
+		</tbody>
+	</table>
+	<%= link_to "備品一覧に戻る", admin_item_stocks_path %>
+	</div>
