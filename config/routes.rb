@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
   namespace :admin do
-    get 'item_stocks/index'
-    get 'item_stocks/show'
+    get 'item_stocks' => 'item_stocks#index'
+    get 'item_stocks/new'
+    get 'item_stocks/:id' => 'item_stocks#show', as: 'item_stock'
+    get 'item_stocks/:id/edit' => 'item_stocks#edit', as: 'edit_item_stock'
+    patch 'item_stocks/:id' => 'item_stocks#update', as: 'update_item_stock'
+    post 'item_stocks' => 'item_stocks#create'
   end
   namespace :admin do
     get 'customers' => 'customers#index'
