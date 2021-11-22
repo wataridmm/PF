@@ -1,13 +1,7 @@
 <div class="container p-5">
   <h1>備品登録画面</h1>
   <%= form_with model: @item, url:'/admin/items', local:true do |f| %>
-  <table class="admin_item_info item_form">
-			<thead>
-				<tr>
-					<th></th>
-					<th></th>
-				</tr>
-			</thead>
+  <table class="table table-bordered">
 			<tbody>
 				<tr>
 					<td><%= f.label :name, "備品名" %></td>
@@ -32,4 +26,5 @@
 			<%= f.submit "作成", class: "btn btn-primary" %>
 		</div>
 		<% end %>
+		
 </div>

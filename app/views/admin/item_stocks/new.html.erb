@@ -1,0 +1,21 @@
+<div class="container p-5">
+  <h1>在庫登録画面</h1>
+  <%= form_with model: @item_stock, url:'/admin/item_stocks', local:true do |f| %>
+  <table class="table table-bordered">
+			<tbody>
+				<tr>
+					<td><%= f.label :name, "備品名" %></td>
+					<td><%= f.collection_select :item_id, Item.all, :id, :name %></td>
+				</tr>
+				<tr>
+					<td><%= f.label :stock, "在庫数" %></td>
+					<td><%= f.text_field :stock %></td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="flex align-center pl5">
+			<%= f.submit "作成", class: "btn btn-primary" %>
+		</div>
+	<% end %>
+	<h2><%= link_to "在庫一覧", admin_item_stocks_path %></h2>
+</div>
