@@ -72,9 +72,7 @@ ActiveRecord::Schema.define(version: 2021_11_13_212757) do
 
   create_table "request_details", force: :cascade do |t|
     t.integer "request_id", null: false
-    t.integer "worker_id", null: false
     t.integer "item_id", null: false
-    t.integer "venue_id"
     t.integer "amount", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -82,7 +80,8 @@ ActiveRecord::Schema.define(version: 2021_11_13_212757) do
 
   create_table "requests", force: :cascade do |t|
     t.integer "worker_id", null: false
-    t.integer "status", null: false
+    t.integer "status", default: 0, null: false
+    t.integer "venue_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
