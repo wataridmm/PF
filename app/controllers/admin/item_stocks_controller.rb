@@ -24,7 +24,7 @@ class Admin::ItemStocksController < ApplicationController
   end
 
   def destroy
-    item_stock = item_stock.find(params[:id])
+    item_stock = ItemStock.find(params[:id])
     item_stock.destroy
     redirect_to admin_item_stocks_path
   end

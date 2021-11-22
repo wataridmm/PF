@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  namespace :worker do
+    get 'requests/new'
+    get 'requests/index'
+    get 'requests/show'
+  end
   namespace :admin do
     get 'item_stocks' => 'item_stocks#index'
     get 'item_stocks/new'

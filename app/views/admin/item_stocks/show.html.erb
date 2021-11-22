@@ -13,6 +13,7 @@
 			<tr>
 				<td><%= @item_stock.id %></td>
 				<td><%= @item_stock.item.name %></td>
+				<td><%= @item_stock.stock %></td>
 				<td><%= @item_stock.status %></td>
 				<td><%= link_to "編集", admin_edit_item_stock_path(@item_stock.id) , class: "btn btn-success" %></td>
 				<td><%= link_to "削除", admin_destroy_item_stock_path(@item_stock.id), method: :delete, "data-confirm" => "削除してもよろしいですか？在庫として登録されている場合はエラーになりますので、在庫情報を消してからOKを押してください", class: "btn btn-danger" %></td>
