@@ -38,7 +38,7 @@ class Worker::RequestsController < ApplicationController
   private
 
   def request_params
-    params.require(:request).permit(:worker_id, :venue_id[request_details_attributes:
+    params.require(:request).permit(:worker_id, :venue_id, [request_details_attributes:
     [:request_id, :item_id, :amount]]).merge(worker_id: current_worker.id)
   end
 
