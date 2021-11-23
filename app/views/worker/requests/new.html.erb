@@ -1,21 +1,18 @@
-<h1>Worker::Requests#new</h1>
-<p>Find me in app/views/worker/requests/new.html.erb</p>
-
 <div class="container p-5">
   <h1>申請画面</h1>
   <%= form_with model: @request, url:'/worker/requests', local:true do |f| %>
   <table class="table table-bordered">
 			<tbody>
 				<tr>
-					<td><%= f.label :date, "日程" %></td>
-					<td><%= f.collection_select :item_id, Item.all, :id, :name %></td>
+					<td><%= f.label :event, "現場選択" %></td>
+					<td><%= f.collection_select :event_id, Event.all, :id, :name, prompt: "選択してください" %></td>
 				</tr>
 				<tr>
-					<td><%= f.label :name, "現場名" %></td>
-					<td><%= f.text_field :event.name %></td>
+					<td></td>
+					<td></td>
 				</tr>
 				<tr>
-					<td><%= f.label :venue.name %></td>
+					<td></td>
 				</tr>
 			</tbody>
 		</table>
