@@ -2,7 +2,7 @@ class Worker::RequestsController < ApplicationController
   def new
     @request = Request.new
   end
-  
+
   def create
     @request = Request.new(request_params)
     @request.user_id = current_user.id
@@ -34,11 +34,12 @@ class Worker::RequestsController < ApplicationController
     @worker = Worker.find(params[:id])
     @requests = @worker.requests.page(params[:page]).reverse_order
   end
-  
+
   private
 
   def request_params
-    params.require(:request).permit(:worker_id, :venue_id)
+    params.require(:request).permit(:worker_id, :venue_id[request_details_attributes:
+    [:request_id, :item_id, :amount]]).merge(worker_id: current_worker.id)
   end
-  
+
 end
