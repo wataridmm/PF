@@ -1,6 +1,8 @@
 <div class="container p-5">
   <h1>申請画面</h1>
-  <%= form_with model: @request, url:'/worker/requests', local:true do |f| %>
+  <%#= form_with model: @request, url:'/worker/requests', local:true do |f| %>
+  <%= form_with(model: @request,  url:'/worker/requests', local: true) do |f| %>
+  <%= f.fields_for :request_details do |op| %>
   <table class="table table-bordered">
 			<tbody>
 					<tr>
@@ -10,12 +12,15 @@
 					<tr>
 							<td><%= f.label :item, "備品選択" %></td>
 							<td><%= f.collection_select :item_id, Item.all, :id, :name, prompt: "選択してください" %></td>
+							<td><%= render 'request_detail_fields', f: op %></td>
 					</tr>
+					<%= link_to_add_association '+add', f, :request_details %>
 			</tbody>
 	</table>
 		<div class="flex align-center pl5">
 			<%= f.submit "作成", class: "btn btn-primary" %>
 		</div>
+	<% end %>
 	<% end %>
 	<h2><%= link_to "在庫一覧", worker_requests_path %></h2>
 </div>
