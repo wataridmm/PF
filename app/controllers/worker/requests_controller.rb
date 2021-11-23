@@ -7,6 +7,10 @@ class Worker::RequestsController < ApplicationController
     @request = Request.new(request_params)
     @request.user_id = current_user.id
     if @request.save
+      # ここで作られたIDをdetailにぶち込む
+      # request_detailを作る処理 　配列で送られてくる
+      # eachとかで
+      # save 最後に回数分
       redirect_to worker_requests_path, notice: "You have created request successfully."
     else
       @requests = Request.all
