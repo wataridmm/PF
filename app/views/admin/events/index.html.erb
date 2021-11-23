@@ -12,12 +12,13 @@
             </tr>
         </thead>
         <% @events.each do |event| %>
+        <% dw = ["日", "月", "火", "水", "木", "金", "土"] %>
         <tbody>
             <tr>
                 <td><%= event.id %></td>
-                <td><%= event.date %></td>
+                <td><%= event.date.strftime("%Y/%m/%d(#{dw[event.date.wday]}) %H:%M") %></td>
                 <td><%= event.name %></td>
-                <td><%#= event.venue.name %></td>
+                <td><%= event.venue.name %></td>
                 <td><%= link_to "詳細", admin_event_path(event.id) %></td>
             </tr>
         </tbody>
