@@ -29,10 +29,13 @@ Rails.application.routes.draw do
     delete 'items/:id' => 'items#destroy', as: 'destroy_item'
   end
   namespace :admin do
-    get 'events/index'
     get 'events/new'
-    get 'events/show'
-    get 'events/edit'
+    post 'events' => 'events#create'
+    get 'events' => 'events#index'
+    get 'events/:id' => 'events#show', as: 'event'
+    get 'events/:id/edit' => 'events#edit', as: 'edit_event'
+    patch 'events/:id' => 'events#update', as: 'update_event'
+    delete 'events/:id' => 'events#destroy', as: 'destroy_event'
   end
   namespace :admin do
     get 'requests/index'
