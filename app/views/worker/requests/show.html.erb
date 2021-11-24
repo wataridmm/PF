@@ -1,2 +1,61 @@
-<h1>Worker::Requests#show</h1>
-<p>Find me in app/views/worker/requests/show.html.erb</p>
+<div class="container p-5">
+  <h1>申請詳細</h1>
+	<table class="table table-bordered">
+            <tr>
+                <th>ステータス</th>
+                <td><%= @request.status %></td>
+
+            </tr>
+            <tr>
+                <th>申請ID</th>
+                <td><%= @request.id %></td>
+            </tr>
+            <tr>
+                <th>日程</th>
+                <td><%= @request.event.date %></td>
+            </tr>
+            <tr>
+                <th>現場名</th>
+                <td><%= @request.event.name %></td>
+            </tr>
+            <tr>
+                <th>会場名</th>
+                <td><%= @request.venue.name %></td>
+            </tr>
+            <tr>
+                <th>申請日時</th>
+                <td><%= @request.date %></td>
+            </tr>
+		</table>
+		<h3>備品一覧</h3>
+
+		<tabe>
+		    <thead>
+		        <tr>
+		            <th>備品名</th>
+		            <th>個数</th>
+		        </tr>
+		    </thead>
+		    <% @requests.each do |request| %>
+		    <tbody>
+		        <tr>
+		            <td><%= request.request_detail.item.name %></td>
+		            <td><%= request.request_detail.amount %></td>
+		        </tr>
+		    </tbody>
+
+		</tabe>
+
+
+
+
+
+
+			<tr>
+				<td><%= link_to "編集", admin_edit_request_path(@request.id) , class: "btn btn-success" %></td>
+				<td><%= link_to "削除", admin_destroy_request_path(@request.id), method: :delete, "data-confirm" => "削除してもよろしいですか？在庫として登録されている場合はエラーになりますので、在庫情報を消してからOKを押してください", class: "btn btn-danger" %></td>
+			</tr>
+
+
+	<%= link_to "在庫一覧に戻る", admin_requests_path %>
+	</div>
