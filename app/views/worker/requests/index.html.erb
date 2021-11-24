@@ -21,7 +21,7 @@
         <tbody>
             <tr>
                 <td><%= request.id %></td>
-                <td><%= request.event.date %></td>
+                <td><%= request.event.date.strftime("%Y/%m/%d(#{dw[event.date.wday]}) %H:%M")  %></td>
                 <td><%= request.event.name %></td>
                 <td><%= request.venue.name %></td>
                 <td><%= request.create_at %></td>
