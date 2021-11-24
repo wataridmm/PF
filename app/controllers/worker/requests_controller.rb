@@ -6,7 +6,7 @@ class Worker::RequestsController < ApplicationController
 
   def create
     @request = Request.new(request_params)
-    @request.user_id = current_user.id
+    @request.worker_id = current_worker.id
     if @request.save
       # ここで作られたIDをdetailにぶち込む
       # request_detailを作る処理 　配列で送られてくる

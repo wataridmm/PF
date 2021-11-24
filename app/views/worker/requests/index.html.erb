@@ -21,10 +21,10 @@
         <tbody>
             <tr>
                 <td><%= request.id %></td>
-                <td><%= request.event.date.strftime("%Y/%m/%d(#{dw[event.date.wday]}) %H:%M")  %></td>
-                <td><%= request.event.name %></td>
-                <td><%= request.venue.name %></td>
-                <td><%= request.create_at %></td>
+                <td><%#= request.event.date.strftime("%Y/%m/%d(#{dw[event.date.wday]}) %H:%M")  %></td>
+                <td><%#= request.event.name %></td>
+                <td><%#= request.venue.name %></td>
+                <td><%= request.created_at %></td>
                 <td><%= request.status %></td>
                 <td><%= link_to "詳細", worker_request_path(request.id) %></td>
             </tr>
