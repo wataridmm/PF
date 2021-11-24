@@ -43,19 +43,34 @@ Venue.create(prefecture_id: 1, name: "ベルエッポック美容専門学校", 
 Venue.create(prefecture_id: 1, name: "サントリーホール", station: "恵比寿", is_active: true)
 Venue.create(prefecture_id: 1, name: "LIQUID ROOM", station: "恵比寿", is_active: true)
 Venue.create(prefecture_id: 1, name: "ザ・ガーデンルーム", station: "恵比寿", is_active: true)
+Venue.create(prefecture_id: 1, name: "ザ・ガーデンホール", station: "恵比寿", is_active: true)
 
-Venues.create(prefecture_id: 1, name: "東京国際フォーラム", station: "有楽町", is_active: true)
-Venues.create(prefecture_id: 1, name: "よみうりホール", station: "有楽町", is_active: true)
-Venues.create(prefecture_id: 1, name: "ヒューリックホール東京", station: "有楽町", is_active: true)
+Venue.create(prefecture_id: 1, name: "EX THEATER ROPPONGI", station: "六本木・乃木坂", is_active: true)
+
+Venues.create(prefecture_id: 1, name: "赤坂ACTシアター", station: "赤坂", is_active: true)
+Venues.create(prefecture_id: 1, name: "マイナビBLITZ赤坂", station: "赤坂", is_active: true)
+
+
+
+Venue.create(prefecture_id: 1, name: "東京国際フォーラム", station: "有楽町", is_active: true)
+Venue.create(prefecture_id: 1, name: "よみうりホール", station: "有楽町", is_active: true)
+Venue.create(prefecture_id: 1, name: "ヒューリックホール東京", station: "有楽町", is_active: true)
 
 Venue.create(prefecture_id: 1, name: "新宿ReNY", station: "新宿・西新宿・都庁前", is_active: true)
 
 
-Venues.create(prefecture_id: 1, name: "東京ビッグサイト", station: "国際展示場・東京ビッグサイト", is_active: true)
 
-Venues.create(prefecture_id: 1, name: "オリンパスホール八王子", station: "八王子", is_active: true)
+Venue.create(prefecture_id: 1, name: "Zepp Tokyo", station: "青海・東京テレポート", is_active: true)
+Venue.create(prefecture_id: 1, name: "Zepp Diver City", station: "台場・東京テレポート", is_active: true)
+Venue.create(prefecture_id: 1, name: "東京ビッグサイト", station: "国際展示場・東京ビッグサイト", is_active: true)
+Venue.create(prefecture_id: 1, name: "豊洲PIT", station: "豊洲・新豊洲", is_active: true)
+Venue.create(prefecture_id: 1, name: "新木場スタジオコースト", station: "新木場", is_active: true)
 
-Venues.create(prefecture_id: 3, name: "幕張メッセ", station: "海浜幕張", is_active: true)
+Venue.create(prefecture_id: 1, name: "オリンパスホール八王子", station: "八王子", is_active: true)
 
-Venues.create(prefecture_id: 3, name: "", station: "海浜幕張", is_active: true)
-Venues.create(prefecture_id: 3, name: "", station: "海浜幕張", is_active: true)
+Venue.create(prefecture_id: 1, name: "人見記念講堂", station: "三軒茶屋", is_active: true)
+
+Venue.create(prefecture_id: 3, name: "幕張メッセ", station: "海浜幕張", is_active: true)
+
+#Venue.create(prefecture_id: 3, name: "", station: "海浜幕張", is_active: true)
+#Venue.create(prefecture_id: 3, name: "", station: "海浜幕張", is_active: true)
