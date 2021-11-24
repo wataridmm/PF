@@ -96,13 +96,14 @@ ActiveRecord::Schema.define(version: 2021_11_13_212757) do
   end
 
   create_table "venues", force: :cascade do |t|
-    t.integer "prefecture_id", null: false
+    t.integer "prefecture_id"
     t.integer "image_id"
-    t.string "name", null: false
+    t.string "name"
     t.text "introduction"
-    t.string "station", null: false
+    t.string "station"
     t.string "status"
-    t.boolean "is_active", null: false, default: true
+    t.boolean "is_active"
+    t.integer "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
