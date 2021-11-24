@@ -9,13 +9,26 @@
 							<td><%= f.label :event, "現場選択" %></td>
 							<td><%= f.collection_select :event_id, Event.all, :id, :name, prompt: "選択してください" %></td>
 					</tr>
-					<tr>
-							<td><%= f.label :item, "備品選択" %></td>
-							<td><%= f.collection_select :item_id, Item.all, :id, :name, prompt: "選択してください" %></td>
+			</tbody>
+	</table>
+	<table class="table">
+		<thead>
+			<th>
+				備品名
+			</th>
+			<th>
+				個数
+			</th>
+		</thead>
+		<tbody>
+			<td>
+				<tr>
+							<!--<td><%#= f.label :item, "備品選択" %></td>-->
+							<!--<td><%#= f.collection_select :item_id, Item.all, :id, :name, prompt: "選択してください" %></td>-->
 							<td><%= render 'request_detail_fields', f: op %></td>
 					</tr>
-					<%= link_to_add_association '+add', f, :request_details %>
-			</tbody>
+			</td>
+		</tbody>
 	</table>
 		<div class="flex align-center pl5">
 			<%= f.submit "作成", class: "btn btn-primary" %>
