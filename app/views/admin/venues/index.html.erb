@@ -8,7 +8,7 @@
                 <th>最寄駅</th>
                 <th>会場説明</th>
                 <th>ステータス</th>
-                <th></th>
+                <th>コメント</th>
             </tr>
         </thead>
         <% @venues.each do |venue| %>
@@ -19,6 +19,7 @@
                 <td><%= venue.prefecture.name %></td>
                 <td><%= venue.station %></td>
                 <td><%= venue.introduction %></td>
+                <td><%= venue.is_active %></td>
                 <td><%= venue.status %></td>
                 <td><%= link_to "詳細", admin_venue_path(venue.id) %></td>
             </tr>

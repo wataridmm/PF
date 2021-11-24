@@ -17,5 +17,5 @@ Prefecture.create(name: '茨城', slug: 'ibaraki')
 Prefecture.create(name: '群馬', slug: 'gunma')
 
 
-
+Venues.create(prefecture_id: 1, name: "ZeppTokyo", station: "渋谷")
 
