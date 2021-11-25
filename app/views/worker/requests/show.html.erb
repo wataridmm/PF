@@ -37,7 +37,7 @@
 		    </thead>
 
 		    <% @request_detail.each do |request| %>
-		    <% binding.irb %>
+
 		    <tbody>
 		        <tr>
 		            <td><%= request.item.name %></td>
@@ -46,7 +46,8 @@
 		    </tbody>
             <% end %>
 		</table>
-			<%#= link_to "編集", admin_edit_request_path(@request.id) , class: "btn btn-success" %>
-			<%#= link_to "削除", admin_destroy_request_path(@request.id), method: :delete, "data-confirm" => "削除してもよろしいですか？", class: "btn btn-danger" %>
-	        <%#= link_to "在庫一覧に戻る", admin_requests_path %>
+
+	        <%= link_to "申請一覧に戻る", worker_requests_path %>
+	        <h4>申請の変更をしたい場合は、一度申請取り消しをしてください</h4>
+	        <%= link_to "申請取り消し", worker_requests_path %>
 	</div>

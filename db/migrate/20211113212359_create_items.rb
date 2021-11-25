@@ -4,6 +4,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
 
       t.string :name, null: false
       t.text :comment
+      t.integer :team
       t.boolean :is_active, null: false, default: true
 
 

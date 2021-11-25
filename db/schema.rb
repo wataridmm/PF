@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 2021_11_24_131646) do
   create_table "items", force: :cascade do |t|
     t.string "name", null: false
     t.text "comment"
+    t.integer "team"
     t.boolean "is_active", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
