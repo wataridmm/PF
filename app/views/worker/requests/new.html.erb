@@ -27,11 +27,11 @@
             	<%= render 'request_detail_fields', f: t %>
         <% end %>
         <div class="links">
-            	<%= link_to_add_association 'add', f, :request_details %>
+            	<%= link_to_add_association 'add', f, :request_details, class: "btn btn-success" %>
         </div>
     </div>
     <div class="actions">
-        <%= f.submit %>
+        <%= f.submit "申請" %>
     </div>
 <% end %>
 

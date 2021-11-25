@@ -34,8 +34,11 @@ class Worker::RequestsController < ApplicationController
 
   def show
     @worker = Worker.find(params[:id])
-    @requests = @worker.requests.page(params[:page])
+    @request = Request.find(params[:id])
+    @request_detail = @request.request_details
+    # @requests = @worker.requests.page(params[:page])
   end
+
 
   private
 
