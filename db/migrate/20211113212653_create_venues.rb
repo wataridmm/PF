@@ -18,6 +18,7 @@ class CreateVenues < ActiveRecord::Migration[5.2]
       t.string :station
       t.string :status
       t.boolean :is_active
+      t.integer :type
 
       t.timestamps
     end

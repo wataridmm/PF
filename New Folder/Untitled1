@@ -1,0 +1,104 @@
+<div class="container p-5">
+  <h1>申請画面</h1>
+  <%#= form_with model: @request, url:'/worker/requests', local:true do |f| %>
+
+
+  <%= form_with(model: @request,  url:'/worker/requests', local: true) do |f| %>
+
+  <table class="table table-bordered">
+			<tbody>
+					<tr>
+							<td><%= f.label :event, "現場選択" %></td>
+							<td><%= f.collection_select :event_id, Event.all, :id, :name, prompt: "選択してください" %></td>
+					</tr>
+			</tbody>
+	</table>
+
+	<div style="display: flex; width: 100%">
+		<h4 class="table-layout" >
+			備品名
+		</h4>
+  	<h4 class="table-layout">
+			個数
+		</h4>
+	</div>
+
+
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+			<th>
+				備品名
+			</th>
+			<th>
+				個数
+			</th>
+
+		</thead>
+		<%= f.fields_for :request_details do |op| %>
+		<%= link_to_add_association 'add', f, :request_details %>
+
+							<!--<td><%#= f.label :item, "備品選択" %></td>-->
+							<!--<td><%#= f.collection_select :item_id, Item.all, :id, :name, prompt: "選択してください" %></td>-->
+							<%= render 'request_detail_fields', f: op %>
+	</table>
+
+		<div class="flex align-center pl5">
+			<%= f.submit "作成", class: "btn btn-primary" %>
+		</div>
+	<% end %>
+	<% end %>
+	<h2><%= link_to "申請一覧", worker_requests_path %></h2>
+</div>
+<div class="container p-5">
+  <h1>申請画面</h1>
+  <%#= form_with model: @request, url:'/worker/requests', local:true do |f| %>
+
+
+  <%= form_with(model: @request,  url:'/worker/requests', local: true) do |f| %>
+
+  <table class="table table-bordered">
+			<tbody>
+					<tr>
+							<td><%= f.label :event, "現場選択" %></td>
+							<td><%= f.collection_select :event_id, Event.all, :id, :name, prompt: "選択してください" %></td>
+					</tr>
+			</tbody>
+	</table>
+
+	<div style="display: flex; width: 100%">
+		<h4 class="table-layout" >
+			備品名
+		</h4>
+  	<h4 class="table-layout">
+			個数
+		</h4>
+	</div>
+
+
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+			<th>
+				備品名
+			</th>
+			<th>
+				個数
+			</th>
+
+		</thead>
+		<%= f.fields_for :request_details do |op| %>
+		<%= link_to_add_association 'add', f, :request_details %>
+
+							<!--<td><%#= f.label :item, "備品選択" %></td>-->
+							<!--<td><%#= f.collection_select :item_id, Item.all, :id, :name, prompt: "選択してください" %></td>-->
+							<%= render 'request_detail_fields', f: op %>
+	</table>
+
+		<div class="flex align-center pl5">
+			<%= f.submit "作成", class: "btn btn-primary" %>
+		</div>
+	<% end %>
+	<% end %>
+	<h2><%= link_to "申請一覧", worker_requests_path %></h2>
+</div>

@@ -1,2 +1,52 @@
-<h1>Worker::Requests#show</h1>
-<p>Find me in app/views/worker/requests/show.html.erb</p>
+<div class="container p-5">
+  <h1>申請詳細</h1>
+	<table class="table table-bordered">
+	    <% dw = ["日", "月", "火", "水", "木", "金", "土"] %>
+            <tr>
+                <th>ステータス</th>
+                <td><%= @request.status %></td>
+            </tr>
+            <tr>
+                <th>申請ID</th>
+                <td><%= @request.id %></td>
+            </tr>
+            <tr>
+                <th>日程</th>
+                <td><%= @request.event.date.strftime("%Y/%m/%d(#{dw[@request.event.date.wday]}) %H:%M") %></td>
+            </tr>
+            <tr>
+                <th>現場名</th>
+                <td><%= @request.event.name %></td>
+            </tr>
+            <tr>
+                <th>会場名</th>
+                <td><%= @request.event.venue.name %></td>
+            </tr>
+            <tr>
+                <th>申請日時</th>
+                <td><%= @request.created_at.strftime("%Y/%m/%d(#{dw[@request.created_at.wday]}) %H:%M") %></td>
+            </tr>
+		</table>
+		<h3>備品一覧</h3>
+		<table class="table table-bordered">
+		    <thead>
+		        <tr>
+		            <th>備品名</th>
+		            <th>個数</th>
+		        </tr>
+		    </thead>
+
+		    <% @request_detail.each do |request| %>
+		    <% binding.irb %>
+		    <tbody>
+		        <tr>
+		            <td><%= request.item.name %></td>
+		            <td><%= request.amount %></td>
+		        </tr>
+		    </tbody>
+            <% end %>
+		</table>
+			<%#= link_to "編集", admin_edit_request_path(@request.id) , class: "btn btn-success" %>
+			<%#= link_to "削除", admin_destroy_request_path(@request.id), method: :delete, "data-confirm" => "削除してもよろしいですか？", class: "btn btn-danger" %>
+	        <%#= link_to "在庫一覧に戻る", admin_requests_path %>
+	</div>

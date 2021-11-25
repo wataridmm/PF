@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   namespace :worker do
     get 'top' => 'homes#top'
     resources :requests, only: [:new, :index, :show, :edit]
+    patch 'requests/:id' => 'requests#update', as: 'update_request'
+    post 'requests' => 'requests#create'
+    delete 'requests/:id' => 'requests#destroy', as: 'destroy_request'
   end
 
 
