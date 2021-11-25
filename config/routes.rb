@@ -41,9 +41,8 @@ Rails.application.routes.draw do
     delete 'events/:id' => 'events#destroy', as: 'destroy_event'
   end
   namespace :admin do
-    get 'requests/index'
-    get 'requests/show'
-    get 'requests/edit'
+    resources :requests, only: [:index, :show]
+    patch 'requests/:id' => 'requests#update', as: 'update_request'
   end
   namespace :admin do
     get 'workers' => 'workers#index'
