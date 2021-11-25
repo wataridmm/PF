@@ -16,8 +16,10 @@ class Admin::RequestsController < ApplicationController
     if @request.update(status: @status)
       if (@status = 1)
         #@requestからdetailのitem_id（複数）を取得します.each分でitemの種類だけループさせる
+        @item_stock = ItemStock.all
         item = @request.request_details.item
-        item_stock =
+        item_stock = @itemstock.stock
+        
         #item_idをキーにして在庫を更新する。stock - detailのamount
 
       end
