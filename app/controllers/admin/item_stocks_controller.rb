@@ -13,8 +13,12 @@ class Admin::ItemStocksController < ApplicationController
 
   def create
     item_stock = ItemStock.new(item_stock_params)
-    item_stock.save
-    redirect_to admin_item_stocks_path
+
+    if  item_stock.save
+      redirect_to admin_item_stocks_path, notice: "在庫情報が登録されました"
+    else
+      render :new, alert: "正しく入力してください"
+    end
   end
 
   def update

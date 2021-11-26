@@ -5,8 +5,8 @@ class Request < ApplicationRecord
     accepts_nested_attributes_for :request_details, allow_destroy: true
 
     enum status: {申請中: 0, 承認: 1, 却下: 2, キャンセル: 3, 戻り: 4}
-    
-    
+
+
     def organaize_item_stock_amount(status)
         if status == 1
           request_details.each do |request_detail|
@@ -22,14 +22,14 @@ class Request < ApplicationRecord
 
         end
     end
-    
+
     def wday
         event.date.wday
     end
-    
-    
-    validates :worker_id, presence :true
-    validates :status, presence :true
-    
+
+
+    validates :worker_id, presence: true
+    validates :status, presence: true
+
 
 end
