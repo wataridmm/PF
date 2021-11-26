@@ -5,17 +5,18 @@
                 <th>会場名</th>
                 <th>県名</th>
                 <th>最寄駅</th>
-                <th>会場説明</th>
             </tr>
         </thead>
         <% @venues.each do |venue| %>
         <tbody>
             <tr>
-                <td><%= venue.name %></td>
+                <td>
+                <%= link_to venue_path(venue.id) do %>
+                <%= venue.name %>
+                <% end %>
+                </td>
                 <td><%= venue.prefecture.name %></td>
                 <td><%= venue.station %></td>
-                <td><%= venue.introduction %></td>
-                <td><%= link_to "詳細", venue_path(venue.id) %></td>
             </tr>
         </tbody>
         <% end %>

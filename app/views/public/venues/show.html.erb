@@ -3,6 +3,7 @@
   <table class="table table-striped">
 		  <tr>
   		  	<th>会場名</th>
+  		  	
   		  	<td><%= @venue.name %></td>
 		  </tr>
 		  <tr>
@@ -14,13 +15,15 @@
   		  	<td><%= @venue.station %></td>
 		  </tr>
  </table>
-		<%= link_to "会場一覧に戻る", venues_path %>
+		<%= link_to "会場一覧に戻る", venues_path, class:'btn btn-success' %>
+		<br></br>
     <div>
         <%= form_with(model:[@venue, @venue_comment], local: true) do |f| %>
             <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに" %>
             <%= f.submit "送信する" %>
         <% end %>
     </div>
+
     <p>コメント件数：<%= @venue.venue_comments.count %></p>
     <% @venue.venue_comments.each do |venue_comment| %>
         <% dw = ["日", "月", "火", "水", "木", "金", "土"] %>
