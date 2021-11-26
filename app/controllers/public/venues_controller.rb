@@ -5,5 +5,6 @@ class Public::VenuesController < ApplicationController
 
   def show
     @venue = Venue.find(params[:id])
+    @venue_comment = VenueComment.new
   end
 end
