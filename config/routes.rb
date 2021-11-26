@@ -12,49 +12,11 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :item_stocks
     resources :customers, only: [:index, :edit, :update]
-  end
-  namespace :admin do
-    get 'items/new'
-    post 'items' => 'items#create'
-    get 'items' => 'items#index'
-    get 'items/:id' => 'items#show', as: 'item'
-    get 'items/:id/edit' => 'items#edit', as: 'edit_item'
-    patch 'items/:id' => 'items#update', as: 'update_item'
-    delete 'items/:id' => 'items#destroy', as: 'destroy_item'
-  end
-  namespace :admin do
-    get 'events/new'
-    post 'events' => 'events#create'
-    get 'events' => 'events#index'
-    get 'events/:id' => 'events#show', as: 'event'
-    get 'events/:id/edit' => 'events#edit', as: 'edit_event'
-    patch 'events/:id' => 'events#update', as: 'update_event'
-    delete 'events/:id' => 'events#destroy', as: 'destroy_event'
-  end
-  namespace :admin do
-    resources :requests, only: [:index, :show]
-    patch 'requests/:id' => 'requests#update', as: 'update_request'
-  end
-  namespace :admin do
-    get 'workers' => 'workers#index'
-    get 'workers/new'
-    get 'workers/:id' => 'workers#show', as: 'worker'
-    get 'workers/:id/edit' => 'workers#edit', as: 'edit_worker'
-    patch 'workers/:id' => 'workers#update', as: 'update_worker'
-    post 'workers' => 'workers#create'
-  end
-  namespace :admin do
-    get 'venues/index'
-    get 'venues/new'
-    post 'venues' => 'venues#create'
-    get 'venues/:id' => 'venues#show', as: 'venue'
-    get 'venues/:id/edit' => 'venues#edit', as: 'edit_venue'
-    patch 'venues/:id' => 'venues#update', as: 'update_venue'
-    delete 'venues/:id' => 'venues#destroy', as: 'destroy_venue'
-  end
-  namespace :admin do
-    get 'items/new'
-    get 'items/index'
+    resources :items
+    resources :events
+    resources :requests, only: [:index, :show, :update]
+    resources :workers
+    resources :venues
   end
 
   namespace :admin do

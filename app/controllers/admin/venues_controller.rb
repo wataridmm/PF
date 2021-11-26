@@ -9,7 +9,7 @@ class Admin::VenuesController < ApplicationController
 
   def create
     @venue = Venue.new(venue_params)
-    @venue.save ? (redirect_to admin_venues_index_path) : (render :new)
+    @venue.save ? (redirect_to admin_venues_path) : (render :new)
   end
 
   def show
@@ -29,7 +29,7 @@ class Admin::VenuesController < ApplicationController
   def destroy
     venue = Venue.find(params[:id])
     venue.destroy
-    redirect_to admin_venues_index_path
+    redirect_to admin_venues_path
   end
 
 

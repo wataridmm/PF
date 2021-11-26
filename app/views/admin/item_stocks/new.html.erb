@@ -1,7 +1,7 @@
 <div class="container p-5">
-  <h1>在庫登録画面</h1>
-  <%= form_with model: @item_stock, url:'/admin/item_stocks', local:true do |f| %>
-  <table class="table table-bordered">
+  	<h1>在庫登録画面</h1>
+ 	<%= form_with model: @item_stock, url:'/admin/item_stocks', local:true do |f| %>
+  	<table class="table table-bordered">
 			<tbody>
 				<tr>
 					<td><%= f.label :name, "備品名" %></td>
@@ -12,7 +12,7 @@
 					<td><%= f.text_field :stock %></td>
 				</tr>
 			</tbody>
-		</table>
+	</table>
 		<div class="flex align-center pl5">
 			<%= f.submit "作成", class: "btn btn-primary" %>
 		</div>

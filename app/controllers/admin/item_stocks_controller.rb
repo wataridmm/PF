@@ -21,6 +21,13 @@ class Admin::ItemStocksController < ApplicationController
     end
   end
 
+  def edit
+    @item_stock = ItemStock.find(params[:id])
+  end
+
+
+
+
   def update
     item_stock = ItemStock.find(params[:id])
     item_stock.update(item_stock_params)
