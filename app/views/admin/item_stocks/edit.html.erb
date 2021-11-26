@@ -1,0 +1,22 @@
+<div class="container p-5">
+  <h1><%= @item_stock.item.name %>在庫編集画面</h1>
+
+  <%= form_with model:@item_stock, url:"/admin/item_stocks/#{@item_stock.id}", local:true do |f| %>
+    <table class="table table-bordered">
+			<tbody>
+				<tr>
+					<td><%= f.label :name, "備品名" %></td>
+					<td><%= @item_stock.item.name %></td>
+				</tr>
+				<tr>
+					<td><%= f.label :stock, "在庫数" %></td>
+					<td><%= f.text_field :stock %></td>
+				</tr>
+			</tbody>
+	</table>
+	<div class="row p-3">
+  <%= f.submit '更新',class: "btn btn-primary" %>
+  </div>
+  <% end %>
+  <%= link_to "戻る", admin_item_stock_path(@item_stock.id), class: "btn btn-success" %>
+</div>

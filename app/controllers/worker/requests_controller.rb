@@ -1,4 +1,6 @@
 class Worker::RequestsController < ApplicationController
+  
+  
   def new
     @request = Request.new
     @request.request_details.build
