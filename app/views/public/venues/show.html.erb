@@ -3,6 +3,7 @@
   <table class="table table-striped">
 		  <tr>
   		  	<th>会場名</th>
+  		  	
   		  	<td><%= @venue.name %></td>
 		  </tr>
 		  <tr>
@@ -14,20 +15,8 @@
   		  	<td><%= @venue.station %></td>
 		  </tr>
  </table>
-		<%= link_to "会場一覧に戻る", venues_path %>
-		<p>コメント件数：<%= @venue.venue_comments.count %></p>
-
-    <% @venue.venue_comments.each do |venue_comment| %>
-        <% dw = ["日", "月", "火", "水", "木", "金", "土"] %>
-        <%= venue_comment.customer.name %>
-        <%= venue_comment.created_at.strftime("%Y/%m/%d(#{dw[venue.created_at.wday]}) %H:%M") %><%= venue_comment.comment %>
-          <% if venue_comment.user == current_user %>
-          <div>
-            <%= link_to "削除", venue_venue_comment_path(venue_comment.venue, venue_comment), method: :delete %>
-          </div>
-          <% end %>
-    <% end %>
-
+		<%= link_to "会場一覧に戻る", venues_path, class:'btn btn-success' %>
+		<br></br>
     <div>
         <%= form_with(model:[@venue, @venue_comment], local: true) do |f| %>
             <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに" %>
@@ -35,6 +24,17 @@
         <% end %>
     </div>
 
+    <p>コメント件数：<%= @venue.venue_comments.count %></p>
+    <% @venue.venue_comments.each do |venue_comment| %>
+        <% dw = ["日", "月", "火", "水", "木", "金", "土"] %>
+        <%= venue_comment.customer.name %>
+        <%= venue_comment.created_at.strftime("%Y/%m/%d(#{dw[venue.created_at.wday]}) %H:%M") %><%= venue_comment.comment %>
+          <% if venue_comment.user == current_user %>
+              <div>
+                  <%= link_to "削除", venue_venue_comment_path(venue_comment.venue, venue_comment), method: :delete %>
+              </div>
+          <% end %>
+    <% end %>
 
 
 </div>
