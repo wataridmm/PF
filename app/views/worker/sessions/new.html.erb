@@ -7,15 +7,15 @@
                 <div class="card-body">
                     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                         <div class="form-group row">
-                            <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+                            <label for="email_address" class="col-md-4 col-form-label text-md-right">メールアドレス</label>
                             <div class="col-md-6">
-                                <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                                <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "name@example.com" %>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">パスワード</label>
                             <div class="col-md-6">
-                                <%= f.password_field :password, autocomplete: "current-password" %>
+                                <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password" %>
                             </div>
                         </div>
                         <div class="form-group row">
