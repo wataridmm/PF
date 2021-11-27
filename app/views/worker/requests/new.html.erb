@@ -1,14 +1,14 @@
 <div class="container p-5">
       <h1>申請画面</h1>
       <%#= form_with model: @request, url:'/worker/requests', local:true do |f| %>
-    
-    
+
+
      <%= form_with(model: @request,  url:'/worker/requests', local: true) do |f| %>
         <table class="table table-bordered">
     		<tbody>
     			<tr>
     				<td><%= f.label :event, "現場選択" %></td>
-    				<td><%= f.collection_select :event_id, Event.all, :id, :name, prompt: "選択してください" %></td>
+    				<td><%= f.collection_select :event_id, Event.where(worker_id: nil), :id, :name, prompt: "選択してください" %></td>
     			</tr>
     		</tbody>
     	</table>
@@ -32,7 +32,7 @@
             <%= f.submit "申請" %>
         </div>
             <% end %>
-    
+
     	<h2><%= link_to "申請一覧", worker_requests_path %></h2>
 </div>
 

@@ -1,14 +1,18 @@
 
 
 <% if admin_signed_in? %>
+      <p class="information">管理者としてログイン中</p>
       <header class="admin_header">
-        <div class="header-content">
 
-          <%= link_to 'V2', admin_top_path, class: "logo" %>
+        <div class="header-content">
+          <div>
+            <%= link_to admin_top_path, class: "logo" do %>
+              <h1>V2</h1>
+            <% end %>
+          </div>
           <nav class="navbar navbar-expand-lg navbar-light">
 
           <ul class="element">
-            <p>管理者としてログイン中</p>
             <li><%= link_to '在庫管理', admin_item_stocks_path %></li>
             <li><%= link_to '申請一覧', admin_requests_path %></li>
             <li><%= link_to 'イベント一覧', admin_events_path %></li>
@@ -42,9 +46,10 @@
           <%= link_to 'V2', root_path, class: "logo" %>
           <ul class="element">
             <p>ようこそ、<%= current_customer.name %>さん!</p>
-            <li><%= link_to 'イベント一覧', event_index_path %></li>
+            <li><%= link_to 'イベント一覧', events_path %></li>
             <li><%= link_to '会場一覧', venues_path %></li>
-            <li><%= link_to 'ログアウト', destroy_customer_session_path: :delete %></li>
+            <li><%= link_to 'ログアウト', destroy_customer_session_path, method: :delete %></li>
+            <%= link_to 'ログアウト', destroy_worker_session_path, method: :delete %>
           </ul>
         </div>
       </header>
@@ -53,10 +58,11 @@
         <div class="header-content">
           <%= link_to 'V2', root_path, class: "logo" %>
           <ul class="element">
-            <li><%= link_to 'イベント一覧', event_index_path %></li>
+            <li><%= link_to 'イベント一覧', events_path %></li>
             <li><%= link_to '会場一覧', venues_path %></li>
             <li><%= link_to '新規登録', new_customer_registration_path %></li>
             <li><%= link_to 'ログイン', new_customer_session_path %></li>
+
           </ul>
         </div>
       </header>
