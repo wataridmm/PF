@@ -4,19 +4,19 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Register</div>
+                    <div class="card-header">会員ログイン</div>
                     <div class="card-body">
                         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                             <div class="form-group row">
-                                <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+                                <label for="email_address" class="col-md-4 col-form-label text-md-right">メールアドレス</label>
                                 <div class="col-md-6">
-                                    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                                    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "name@example.com" %>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                                <label for="password" class="col-md-4 col-form-label text-md-right">パスワード</label>
                                 <div class="col-md-6">
-                                    <%= f.password_field :password, autocomplete: "current-password" %>
+                                    <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password" %>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -35,14 +35,17 @@
                             </div>
                             <div class="col-md-6 offset-md-4">
                                     <%= f.submit "Log in", class: "sign-btn" %>
-                                <a href="#" class="btn btn-link">
-                                    Forgot Your Password?
-                                </a>
+                                <!--<a href="#" class="btn btn-link">-->
+                                <!--    Forgot Your Password?-->
+                                <!--</a>-->
                             </div>
                         <% end %>
                             <div class="text-right m-2">
                               もしくは
                             <%= link_to "新規登録", new_customer_registration_path, class: "btn btn-primary text-right" %>
+                            </div>
+                            <div class="text-right m-3">
+                            会員登録をすると、コメントを投稿することができます。
                             </div>
                     </div>
                 </div>
