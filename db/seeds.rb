@@ -185,7 +185,7 @@ workers = [
     ]
 
 workers.each do |data|
-  Worker.find_or_create_by(
+  Worker.create!(
     email: data[:email],
     last_name: data[:last_name],
     first_name: data[:first_name],
