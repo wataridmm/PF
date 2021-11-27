@@ -1,27 +1,5 @@
 <% if admin_signed_in? %>
       <header class="admin_header">
-        管理者としてログイン中
-      </header>
-    <% elsif worker_signed_in? %>
-      <header>
-        社員<%= current_worker.last_name %>としてログイン中
-      </header>
-    <% elsif customer_signed_in? %>
-      <header>
-        ユーザー<%= current_customer.name %>としてログイン中
-      </header>
-    <% else %>
-      <header>
-        閲覧ユーザー
-      </header>
-    <% end %>
-    <%= link_to 'ログアウトリンク', destroy_worker_session_path, method: :delete %>
-
-
-
-
-<% if admin_signed_in? %>
-      <header class="admin_header">
         <div class="header-content">
           <%= link_to 'V2', admin_top_path, class: "logo" %>
           <ul class="flex">
@@ -40,11 +18,10 @@
     <% elsif worker_signed_in? %>
       <header>
         <div class="header-content">
-          <%= link_to 'V2', worker_top_path, class: "logo" %>
+          <%= link_to 'V2', worker_top_path, class: "navbar-brand" %>
           <ul class="flex">
             <p>お疲れ様です、<%= current_worker.last_name %>さん!</p>
-            <li><%= link_to '全申請一覧', worker_requests_path %></li>
-            <li><%= link_to 'マイ申請', worker_my_request_path %></li>
+            <li><%= link_to '申請一覧', worker_requests_path %></li>
             <li><%= link_to 'イベント一覧', worker_events_path %></li>
             <li><%= link_to '在庫状況', worker_item_stocks_path %></li>
             <li><%= link_to 'ログアウト', destroy_worker_session_path, method: :delete %></li>
