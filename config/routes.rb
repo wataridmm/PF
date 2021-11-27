@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
+
   namespace :worker do
     resources :requests
     resources :item_stocks, only: [:index]
     resources :events, only: [:index, :show]
     get 'top' => 'homes#top'
-    get 'my_request' => 'requests#my_request'
   end
 
 
