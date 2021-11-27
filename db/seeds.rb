@@ -39,7 +39,9 @@ venues = [
     {pid: 1, name: 'shibuya duo MUSIC EXCHANGE', station: '渋谷'},
     {pid: 1, name: '渋谷チェルシーホテル', station: '渋谷'},
     {pid: 1, name: '渋谷スパイラル', station: '渋谷'},
-    {pid: 1, name: '渋谷クアトロ', station: '渋谷'},
+    {pid: 1, name: 'クラブクアトロ', station: '渋谷'},
+    {pid: 1, name: 'シアターコクーン', station: '渋谷'},
+    {pid: 1, name: 'オーチャードホール', station: '新宿・西新宿・都庁前'},
 
     {pid: 1, name: '代官山LOOP', station: '代官山'},
     {pid: 1, name: 'UNIT代官山', station: '代官山'},
@@ -68,6 +70,10 @@ venues = [
     {pid: 1, name: 'ヒューリックホール東京', station: '有楽町'},
 
     {pid: 1, name: '新宿ReNY', station: '新宿・西新宿・都庁前'},
+    {pid: 1, name: '新国立劇場', station: '新宿・西新宿・都庁前'},
+    
+    
+    
     {pid: 1, name: 'Zepp Tokyo', station: '青海・東京テレポート'},
     {pid: 1, name: 'Zepp Diver City', station: '台場・東京テレポート'},
     {pid: 1, name: '東京ビッグサイト', station: '国際展示場・東京ビッグサイト'},
@@ -156,7 +162,7 @@ items = [
   {name: 'ヘルメット青', comment: '搬入・搬出用18個以上はケース単位で用意', team: 0},
   {name: 'ヘルメット緑', comment: '搬入・搬出用18個以上はケース単位で用意', team: 0},
   {name: '荷物袋', comment: '30枚単位', team: 0},
-  {name: '荷物袋用札', comment: '100枚単位', team: 0},
+  {name: '荷物袋用札', comment: '100枚単位', team: 0}
   ]
 
 

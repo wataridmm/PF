@@ -1,10 +1,13 @@
-<h1>申請一覧</h1>
-<p>Find me in app/views/worker/requests/index.html.erb</p>
-
-
-
-
 <div class="container p-5">
+
+<h1>申請一覧</h1>
+<nav>
+    <ul>
+      <li><button id="my">my request</button></li>
+      <li><button id="all">all request</button></li>
+    </ul>
+</nav>
+<% [@my_requests, @requests].each_with_index do | r, index | %>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -17,7 +20,7 @@
                 <th></th>
             </tr>
         </thead>
-        <% @requests.each do |request| %>
+        <% r.each do |request| %>
         <% dw = ["日", "月", "火", "水", "木", "金", "土"] %>
         <tbody>
             <tr>
@@ -32,6 +35,33 @@
         </tbody>
         <% end %>
     </table>
+        <% end %>
     <h2><%= link_to "新規申請", new_worker_request_path %></h2>
     <h2><%= link_to "社員トップ", worker_top_path %></h2>
 </div>
+    <style>
+        li {
+          list-style: none;
+        }
+        ul { display: flex; }
+        button {padding: 10px;
+                background-color: lightblue;
+                border: none;
+                margin: 0;
+        }
+
+        /*#table_1 { display: none; }*/
+</style>
+<script>
+  document.getElementById('table_0').style.display = "block";
+  document.getElementById('table_1').style.display = "none";
+
+  document.getElementById('my').addEventListener("click", () => {
+    document.getElementById('table_0').style.display = "block";
+    document.getElementById('table_1').style.display = "none";
+});
+  document.getElementById('all').addEventListener("click", () => {
+    document.getElementById('table_0').style.display = "none";
+    document.getElementById('table_1').style.display = "block";
+});
+</script>
