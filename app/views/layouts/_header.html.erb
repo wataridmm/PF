@@ -5,6 +5,8 @@
         <div class="header-content">
 
           <%= link_to 'V2', admin_top_path, class: "logo" %>
+          <nav class="navbar navbar-expand-lg navbar-light">
+            
           <ul class="element">
             <p>管理者としてログイン中</p>
             <li><%= link_to '在庫管理', admin_item_stocks_path %></li>
@@ -16,6 +18,7 @@
             <li><%= link_to '会員一覧', admin_customers_path %></li>
             <li><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete %></li>
           </ul>
+          </nav>
         </div>
       </header>
     <% elsif worker_signed_in? %>

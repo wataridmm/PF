@@ -11,7 +11,7 @@ class Admin::EventsController < ApplicationController
     @event = Event.new(event_params)
     if @event.save
       redirect_to admin_events_path
-      else
+    else
       render :new
 
     end

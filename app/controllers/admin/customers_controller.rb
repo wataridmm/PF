@@ -12,4 +12,8 @@ class Admin::CustomersController < ApplicationController
     customer.update(customer_params)
     redirect_to admin_customers_path
   end
+
+  def customer_params
+    params.require(:customer).permit(:name, :is_deleted)
+  end
 end
