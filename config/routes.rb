@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
+
   namespace :worker do
-    get 'top' => 'homes#top'
     resources :requests
-    # , only: [:new, :index, :show, :edit]
-    # patch 'requests/:id' => 'requests#update', as: 'update_request'
-    # post 'requests' => 'requests#create'
-    # delete 'requests/:id' => 'requests#destroy', as: 'destroy_request'
+    resources :item_stocks, only: [:index]
+    resources :events, only: [:index, :show]
+    get 'top' => 'homes#top'
   end
 
 
@@ -40,6 +39,7 @@ Rails.application.routes.draw do
       resources :venues, only: [:index, :show] do
       resources :venue_comments, only: [:create, :destroy]
     end
+    resources :event, only: [:index, :show]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

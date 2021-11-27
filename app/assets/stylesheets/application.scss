@@ -14,24 +14,72 @@
  *= require_self
  */
 
+
 @import "bootstrap";
+* {
+   box-sizing: border-box;
+}
+body {
+   margin: 0;
+   padding: 0;
+   font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   background-color: #e6e6e6;
+}
+
+header {
+    padding: 30px 4% 10px;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+// .element {
+//   text-decoration: none;
+//   color: #4b4b4b;
+// }
+
+// .logo {
+//   font-size: 50px;
+// }
+
+.header-content {
+   margin: 0; padding: 0;
+   font-size: 20px;
+   text-decoration: none;
+   color: #4b4b4b;
+}
+
+ul {
+   list-style: none;
+   margin: 0;
+   display: flex;
+}
+
+// li {
+//   margin: 0 0 0 15px;
+// }
+
+nav {
+   margin: 0 0 0 auto;
+}
+
+
 .table-layout {
   border: 1px solid lightgray ;
   padding: 10px;
   font-weight: 600;
   flex: 1;
   margin: 0;
-  
+
 }
 
 .nested-fields {
   display: flex;
  border-bottom: 1px solid lightgray ;
  border-right: 1px solid lightgray ;
-
  border-left: 1px solid lightgray ;
- 
- 
 
 }
 
@@ -41,4 +89,36 @@
 
 .ground-child-field{
   margin:  10px 10px 0px 10px;
+}
+
+
+// タブ切り替えのレイアウト
+.tab {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  border-left: solid 1px #CCC;
+  border-bottom: solid 1px #CCC;
+}
+.tab:first-child {
+  border-left: none;
+}
+.tab-active {
+  color: #FFF;
+  background: #19b5d1;
+  transition: all 0.2s ease-in-out;
+}
+.tabbox {
+  display: none;
+  padding: 15px;
+}
+.box-show {
+  display: block;
+}
+.tab:hover{
+  box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.5);
+  transform: translateY(-1px);
+}
+.tab-list {
+  display: flex;
 }
