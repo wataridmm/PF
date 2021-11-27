@@ -2,7 +2,6 @@
         <thead>
             <tr>
                 <th>申請ID</th>
-                <th>担当者</th>
                 <th>日程</th>
                 <th>現場名</th>
                 <th>会場名</th>
@@ -16,7 +15,6 @@
         <tbody>
             <tr>
                 <td><%= request.id %></td>
-                <td><%= request.worker.last_name %></td>
                 <td><%= request.event.date.strftime("%Y/%m/%d(#{dw[request.event.date.wday]}) %H:%M")  %></td>
                 <td><%= request.event.name %></td>
                 <td><%= request.event.venue.name %></td>

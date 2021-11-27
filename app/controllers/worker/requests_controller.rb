@@ -10,7 +10,9 @@ class Worker::RequestsController < ApplicationController
     @request = Request.new(event_id: params[:request][:event_id])
     @request.worker_id = current_worker.id
     if @request.save
-
+      event = Event.find(params[:request][:event_id])
+      event.worker_id = current_worker.id
+      event.save
       #[{"item_id"=>"1", "amount"=>"2", "_destroy"=>"false"}, {"item_id"=>"4", "amount"=>"6", "_destroy"=>"false"}]
       params[:request][:request_details_attributes].values.each do | request_detail |
         RequestDetail.new({request_id: @request.id, item_id: request_detail[:item_id], amount: request_detail[:amount]}).save

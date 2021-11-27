@@ -36,10 +36,11 @@ Rails.application.routes.draw do
 
   scope module: :public do
     root 'customers#top'
+    resources :events, only: [:index, :show]
       resources :venues, only: [:index, :show] do
       resources :venue_comments, only: [:create, :destroy]
     end
-    resources :event, only: [:index, :show]
+
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

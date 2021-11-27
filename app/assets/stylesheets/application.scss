@@ -25,13 +25,20 @@ body {
    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
    background-color: #e6e6e6;
 }
+.information {
+    margin: 0;
+    text-align: right;
+    padding: 2px 40px;
+    background-color: #f33123;
+    color: white;
+    font-weight: bold;
+}
 
 header {
     padding: 30px 4% 10px;
     top: 0;
     width: 100%;
     background-color: #fff;
-    display: flex;
     align-items: center;
 }
 
@@ -49,12 +56,14 @@ header {
    font-size: 20px;
    text-decoration: none;
    color: #4b4b4b;
+   display: flex;
 }
 
 ul {
    list-style: none;
    margin: 0;
    display: flex;
+   gap: 20px;
 }
 
 // li {
