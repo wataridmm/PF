@@ -1,6 +1,6 @@
 class Worker::RequestsController < ApplicationController
-  
-  
+
+
   def new
     @request = Request.new
     @request.request_details.build
@@ -29,7 +29,7 @@ class Worker::RequestsController < ApplicationController
 
   end
 
-  def all_workers
+  def my_request
 
   end
 
