@@ -4,7 +4,7 @@
         <thead>
             <tr>
                 <th>イベントID</th>
-                <!--<th>担当社員</th>-->
+                <th>担当社員</th>
                 <th>日程</th>
                 <th>現場名</th>
                 <th>会場名</th>
@@ -16,6 +16,13 @@
         <tbody>
             <tr>
                 <td><%= event.id %></td>
+                <td>
+                    <% if event.worker.present? %>
+                        <%= event.worker.name %>
+                      <% else %>
+                        担当社員なし
+                    <% end %>
+                </td>
                 <td><%= event.date.strftime("%Y/%m/%d(#{dw[event.date.wday]}) %H:%M") %></td>
                 <td><%= event.name %></td>
                 <td><%= event.venue.name %></td>
@@ -24,6 +31,6 @@
         </tbody>
         <% end %>
     </table>
-    <h2><%= link_to "新規イベント作成", admin_events_new_path %></h2>
+    <h2><%= link_to "新規イベント作成", new_admin_event_path %></h2>
     <h2><%= link_to "管理者トップ", admin_top_path %></h2>
 </div>

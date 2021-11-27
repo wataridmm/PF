@@ -5,7 +5,7 @@ class Item < ApplicationRecord
 
 
   enum status: {運営: 0, ケータリング: 1, その他: 2}
-  
+
   validates :name, presence: true
 
 end
