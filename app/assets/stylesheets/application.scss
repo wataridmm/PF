@@ -12,7 +12,6 @@
  *
  *= require_tree .
  *= require_self
- *= require social-share-button
  */
 
 
@@ -30,10 +29,7 @@
   display: flex;
  border-bottom: 1px solid lightgray ;
  border-right: 1px solid lightgray ;
-
  border-left: 1px solid lightgray ;
-
-
 
 }
 
@@ -43,4 +39,33 @@
 
 .ground-child-field{
   margin:  10px 10px 0px 10px;
+}
+
+
+// タブ切り替え機能
+.tab {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  border-left: solid 1px #CCC;
+  border-bottom: solid 1px #CCC;
+}
+.tab:first-child {
+  border-left: none;
+}
+.tab-active {
+  color: #FFF;
+  background: #19b5d1;
+  transition: all 0.2s ease-in-out;
+}
+.tabbox {
+  display: none;
+  padding: 15px;
+}
+.box-show {
+  display: block;
+}
+.tab:hover{
+  box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.5);
+  transform: translateY(-1px);
 }

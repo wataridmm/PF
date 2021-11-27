@@ -1,67 +1,23 @@
 <div class="container p-5">
-
-<h1>申請一覧</h1>
-<nav>
-    <ul>
-      <li><button id="my">my request</button></li>
-      <li><button id="all">all request</button></li>
+    <h1>申請一覧</h1>
+    <!--タブの表示-->
+    <ul class="tab-list list-unstyled">
+      <li class="tab tab-active">
+        マイ申請
+      </li>
+      <li class="tab">
+        全社員の申請
+      </li>
     </ul>
-</nav>
-<% [@my_requests, @requests].each_with_index do | r, index | %>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>申請ID</th>
-                <th>日程</th>
-                <th>現場名</th>
-                <th>会場名</th>
-                <th>申請日時</th>
-                <th>申請ステータス</th>
-                <th></th>
-            </tr>
-        </thead>
-        <% r.each do |request| %>
-        <% dw = ["日", "月", "火", "水", "木", "金", "土"] %>
-        <tbody>
-            <tr>
-                <td><%= request.id %></td>
-                <td><%= request.event.date.strftime("%Y/%m/%d(#{dw[request.event.date.wday]}) %H:%M")  %></td>
-                <td><%= request.event.name %></td>
-                <td><%= request.event.venue.name %></td>
-                <td><%= request.created_at.strftime("%Y/%m/%d(#{dw[request.created_at.wday]}) %H:%M") %></td>
-                <td><%= request.status %></td>
-                <td><%= link_to "詳細", worker_request_path(request.id) %></td>
-            </tr>
-        </tbody>
-        <% end %>
-    </table>
-        <% end %>
-    <h2><%= link_to "新規申請", new_worker_request_path %></h2>
-    <h2><%= link_to "社員トップ", worker_top_path %></h2>
+    <!--タブによってい選択された部分テンプレート-->
+    <div class="tabbox-contents">
+      <div class="tabbox box-show">
+        <%= render 'request_index', requests: @my_requests %>
+      </div>
+      <div class="tabbox">
+        <%= render 'request_index', requests: @requests %>
+      </div>
+    <%= link_to "新規申請", new_worker_request_path, class: "btn btn-success" %>
+    <%= link_to "社員トップ", worker_top_path, class: "btn btn-primary" %>
 </div>
-    <style>
-        li {
-          list-style: none;
-        }
-        ul { display: flex; }
-        button {padding: 10px;
-                background-color: lightblue;
-                border: none;
-                margin: 0;
-        }
 
-        /*#table_1 { display: none; }*/
-</style>
-<script>
-  document.getElementById('table_0').style.display = "block";
-  document.getElementById('table_1').style.display = "none";
-
-  document.getElementById('my').addEventListener("click", () => {
-    document.getElementById('table_0').style.display = "block";
-    document.getElementById('table_1').style.display = "none";
-});
-  document.getElementById('all').addEventListener("click", () => {
-    document.getElementById('table_0').style.display = "none";
-    document.getElementById('table_1').style.display = "block";
-});
-</script>
