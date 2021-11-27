@@ -16,6 +16,56 @@
 
 
 @import "bootstrap";
+* {
+   box-sizing: border-box;
+}
+body {
+   margin: 0;
+   padding: 0;
+   font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   background-color: #e6e6e6;
+}
+
+header {
+    padding: 30px 4% 10px;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+// .element {
+//   text-decoration: none;
+//   color: #4b4b4b;
+// }
+
+// .logo {
+//   font-size: 50px;
+// }
+
+.header-content {
+   margin: 0; padding: 0;
+   font-size: 20px;
+   text-decoration: none;
+   color: #4b4b4b;
+}
+
+ul {
+   list-style: none;
+   margin: 0;
+   display: flex;
+}
+
+// li {
+//   margin: 0 0 0 15px;
+// }
+
+nav {
+   margin: 0 0 0 auto;
+}
+
+
 .table-layout {
   border: 1px solid lightgray ;
   padding: 10px;
@@ -42,7 +92,7 @@
 }
 
 
-// タブ切り替え機能
+// タブ切り替えのレイアウト
 .tab {
   width: 100%;
   padding: 10px;

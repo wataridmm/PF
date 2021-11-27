@@ -1,9 +1,11 @@
 
+
 <% if admin_signed_in? %>
       <header class="admin_header">
         <div class="header-content">
+
           <%= link_to 'V2', admin_top_path, class: "logo" %>
-          <ul class="flex">
+          <ul class="element">
             <p>管理者としてログイン中</p>
             <li><%= link_to '在庫管理', admin_item_stocks_path %></li>
             <li><%= link_to '申請一覧', admin_requests_path %></li>
@@ -19,8 +21,10 @@
     <% elsif worker_signed_in? %>
       <header>
         <div class="header-content">
+          <div class="logo">
           <%= link_to 'V2', worker_top_path, class: "navbar-brand" %>
-          <ul class="flex">
+          </div>
+          <ul class="element">
             <p>お疲れ様です、<%= current_worker.last_name %>さん!</p>
             <li><%= link_to '申請一覧', worker_requests_path %></li>
             <li><%= link_to 'イベント一覧', worker_events_path %></li>
@@ -33,7 +37,7 @@
       <header>
         <div class="header-content">
           <%= link_to 'V2', root_path, class: "logo" %>
-          <ul class="flex">
+          <ul class="element">
             <p>ようこそ、<%= current_customer.name %>さん!</p>
             <li><%= link_to 'イベント一覧', event_index_path %></li>
             <li><%= link_to '会場一覧', venues_path %></li>
@@ -45,7 +49,7 @@
       <header>
         <div class="header-content">
           <%= link_to 'V2', root_path, class: "logo" %>
-          <ul class="flex">
+          <ul class="element">
             <li><%= link_to 'イベント一覧', event_index_path %></li>
             <li><%= link_to '会場一覧', venues_path %></li>
             <li><%= link_to '新規登録', new_customer_registration_path %></li>
