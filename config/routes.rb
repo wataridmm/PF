@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :events, only: [:index, :show]
     get 'top' => 'homes#top'
   end
-  
+
   namespace :admin do
     get 'top' => 'homes#top', as: 'top'
     resources :item_stocks
@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :requests, only: [:index, :show, :update]
     resources :workers
     resources :venues
-    
+
   end
   devise_for :worker, skip: [:passwords] , controllers: {
     registrations: "worker/registrations",
