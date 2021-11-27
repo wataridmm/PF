@@ -18,7 +18,7 @@
                 <td><%= event.id %></td>
                 <td>
                     <% if event.worker.present? %>
-                        <%= event.worker.name %>
+                        <%= event.worker.full_name %>
                       <% else %>
                         担当社員なし
                     <% end %>

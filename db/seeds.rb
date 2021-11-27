@@ -71,9 +71,9 @@ venues = [
 
     {pid: 1, name: '新宿ReNY', station: '新宿・西新宿・都庁前'},
     {pid: 1, name: '新国立劇場', station: '新宿・西新宿・都庁前'},
-    
-    
-    
+
+
+
     {pid: 1, name: 'Zepp Tokyo', station: '青海・東京テレポート'},
     {pid: 1, name: 'Zepp Diver City', station: '台場・東京テレポート'},
     {pid: 1, name: '東京ビッグサイト', station: '国際展示場・東京ビッグサイト'},
