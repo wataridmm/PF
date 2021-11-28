@@ -17,3 +17,5 @@ class Worker::ItemStocksController < ApplicationController
   end
 
 end
+
+
