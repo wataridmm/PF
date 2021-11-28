@@ -15,11 +15,24 @@
 			</tr>
 			<tr>
 					<th>ステータス</th>
-					<td><%= @item.is_active %></td>
+					<td><% if @item.is_active == true %>
+							<h5>
+								<span class="badge badge-primary">
+									使用可
+								</span>
+							</h5>
+							<% else %>
+							<h5>
+								<span class="badge badge-secondary">
+									使用不可
+								</span>
+							</h5>
+							<% end %>
+					</td>
 			</tr>
 	</table>
-	<%= link_to "編集", admin_edit_item_path(@item.id) , class: "btn btn-success" %>
-	<%= link_to "削除", admin_destroy_item_path(@item.id), method: :delete, "data-confirm" => "削除してもよろしいですか？在庫として登録されている場合はエラーになりますので、在庫情報を消してからOKを押してください", class: "btn btn-danger" %>
+	<%= link_to "編集", edit_admin_item_path(@item.id) , class: "btn btn-success" %>
+	<%= link_to "削除", admin_item_path(@item.id), method: :delete, "data-confirm" => "削除してもよろしいですか？在庫として登録されている場合はエラーになりますので、在庫情報を消してからOKを押してください", class: "btn btn-danger" %>
 	<br><br>
 	<%= link_to "備品一覧に戻る", admin_items_path,class: "btn btn-primary" %>
 </div>

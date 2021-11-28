@@ -66,13 +66,21 @@ body {
   color: white;
   font-weight: bold;
 }
+.worker_head {
+  margin: 0;
+  text-align: right;
+  padding: 2px 40px;
+  background-color: #1e00c7;
+  color: white;
+  font-weight: bold;
+}
 
 header {
     padding: 30px 4% 10px;
     top: 0;
     width: 100%;
     align-items: center;
-    background: linear-gradient(11deg, #673ab7, transparent);
+        background-color: darkslateblue;
 }
 
 
@@ -90,10 +98,6 @@ ul {
    display: flex;
    gap: 20px;
 }
-
-// li {
-//   margin: 0 0 0 15px;
-// }
 
 nav {
    margin: 0 0 0 auto;
