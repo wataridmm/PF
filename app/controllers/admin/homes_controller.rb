@@ -1,4 +1,6 @@
 class Admin::HomesController < ApplicationController
+  before_action :authenticate_admin!
+  before_action :ensure_customer, only: [:top]
 
   def top
     # if params[:status].present?
@@ -6,6 +8,11 @@ class Admin::HomesController < ApplicationController
     # else
       @requests = Request.where(status: "申請中")
     # end
+  end
+
+  private
+  def ensure_customer
+    @customer = Customer.find(params[:id])
   end
 
 end

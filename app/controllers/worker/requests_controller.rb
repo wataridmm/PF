@@ -1,4 +1,6 @@
 class Worker::RequestsController < ApplicationController
+ before_action :authenticate_worker!
+  before_action :ensure_customer,only: [:edit, :index, :update, :new, :show, :update, :destroy]
 
 
   def new
@@ -21,7 +23,7 @@ class Worker::RequestsController < ApplicationController
       # ここで作られたIDをdetailにぶち込む
       # request_detailを作る処理 　配列で送られてくる
       # eachとかで
-      # save 最後に回数分s
+      # save 最後に回数分
       redirect_to worker_requests_path, notice: "You have created request successfully."
     else
       render 'new', notice: "申請に失敗しました"
@@ -41,6 +43,8 @@ class Worker::RequestsController < ApplicationController
   def destroy
     request = Request.find(params[:id])
     request.destroy
+    event = Event.find(params[:request][:event_id])
+    event.worker_id.destroy
     redirect_to worker_requests_path
 
   end
@@ -59,6 +63,10 @@ class Worker::RequestsController < ApplicationController
 
 
   private
+
+  def request_params
+      params.require(:request).permit(:status)
+  end
 
   def request_params
     # params.require(:request).permit(:worker_id, :venue_id, [request_details_attributes:

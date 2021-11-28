@@ -7,10 +7,10 @@
 #   Character.find_or_create_by(name: 'Luke', movie: movies.first)
 
 
-# Admin.create!(
-#   email: "a@a",
-#   password: "aaaaaa"
-  # )
+Admin.create!(
+  email: "a@a",
+  password: "aaaaaa"
+  )
 
 
 Prefecture.find_or_create_by(name: '東京', slug: 'tokyo')

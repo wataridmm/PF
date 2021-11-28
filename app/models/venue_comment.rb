@@ -5,4 +5,6 @@ class VenueComment < ApplicationRecord
   belongs_to :venue
 
   validates :venue_id, presence: true
+  validates :comment, presence: true
+
 end

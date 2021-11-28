@@ -1,4 +1,7 @@
 class Admin::RequestsController < ApplicationController
+  before_action :authenticate_admin!
+  before_action :ensure_customer, only: [:index, :update, :show, :update]
+  
   def index
     @requests = Request.page(params[:page]).reverse_order
 

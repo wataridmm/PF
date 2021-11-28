@@ -1,4 +1,7 @@
 class Admin::ItemsController < ApplicationController
+  before_action :authenticate_admin!
+  before_action :ensure_customer, only: [:edit, :index, :update, :new, :show, :update, :destroy]
+
   def index
     @items = Item.all
   end
@@ -33,6 +36,10 @@ class Admin::ItemsController < ApplicationController
   end
 
   private
+  
+  def ensure_customer
+    @customer = Customer.find(params[:id])
+  end
 
   def item_params
   params.require(:item).permit(:name, :comment, :is_active)

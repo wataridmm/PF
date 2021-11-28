@@ -1,4 +1,7 @@
 class Admin::VenuesController < ApplicationController
+  before_action :authenticate_admin!
+  before_action :ensure_customer, only: [:edit, :index, :update, :new, :show, :update, :destroy]
+  
   def index
     @venues = Venue.all
   end
@@ -35,6 +38,10 @@ class Admin::VenuesController < ApplicationController
 
 
   private
+  
+  def ensure_customer
+    @customer = Customer.find(params[:id])
+  end
 
   def venue_params
     params.require(:venue).permit(:name, :introduction, :station, :status, :is_active, :prefecture_id)

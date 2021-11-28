@@ -13,11 +13,9 @@
     <div class="tabbox-contents">
         <div class="tabbox box-show">
           <%= render 'my_request_index', requests: @my_requests %>
-          <%= paginate @my_requests %>
         </div>
         <div class="tabbox">
           <%= render 'request_index', requests: @requests %>
-          <%= paginate @requests %>
         </div>
         </div>
     <%= link_to "新規申請", new_worker_request_path, class: "btn btn-success" %>
