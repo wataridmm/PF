@@ -20,7 +20,7 @@
                     <% if event.worker.present? %>
                         <%= event.worker.full_name %>
                       <% else %>
-                        担当社員なし
+                        担当社員未定
                     <% end %>
                 </td>
                 <td><%= event.date.strftime("%Y/%m/%d(#{dw[event.date.wday]}) %H:%M") %></td>
