@@ -60,8 +60,10 @@
     <p class="worker_head">お疲れ様です、<%= current_worker.last_name %>さん!</p>
       <header class="worker_header">
         <div class="header-content">
-          <div class="logo">
-          <%= link_to 'V2', worker_top_path, class: "navbar-brand" %>
+          <div id="head-logo">
+            <%= link_to worker_top_path, class: "logo" do %>
+                <img src="/assets/logo/logo_transparent.png" height="80"  alt="logo">
+            <% end %>
           </div>
           <nav class="navbar navbar-expand-lg navbar-light">
             <ul class="element">
