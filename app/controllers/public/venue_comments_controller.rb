@@ -1,16 +1,17 @@
 class Public::VenueCommentsController < ApplicationController
   before_action :authenticate_customer!
-  before_action :ensure_customer,only: [:create, :destroy]
+  before_action :ensure_customer,only: [:destroy]
 
   def create
-    venue = Venue.find(params[:venue_id])
+    @venue = Venue.find(params[:venue_id])
     comment = current_customer.venue_comments.new(venue_comment_params)
-    comment.venue_id = venue.id
+    comment.venue_id = @venue.id
     if  comment.save
-      redirect_to venue_path(venue), notice: 'コメントを投稿しました。'
+      redirect_to venue_path(@venue), notice: 'コメントを投稿しました。'
     else
+      @venue_comment = VenueComment.new()
       flash.now[:alert] = 'コメントを入力してください。'
-7     render :new
+      render "public/venues/show"
     end
   end
 
@@ -22,7 +23,10 @@ class Public::VenueCommentsController < ApplicationController
   private
 
   def ensure_customer
-    @customer = Customer.find(params[:id])
+    target_customer = VenueComment.find(params[:id]).customer
+    if current_customer.id != target_customer.id
+      redirect_to root_path
+    end
   end
 
   def venue_comment_params
