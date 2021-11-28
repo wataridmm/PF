@@ -1,4 +1,7 @@
 class Admin::EventsController < ApplicationController
+  before_action :authenticate_admin!
+  before_action :ensure_customer, only: [:edit, :index, :update, :new, :show, :update, :destroy]
+
   def index
     @events = Event.all
   end
@@ -38,6 +41,10 @@ class Admin::EventsController < ApplicationController
   end
 
   private
+
+  def ensure_customer
+
+  end
 
   def event_params
   params.require(:event).permit(:name, :comment, :date, :venue_id)
