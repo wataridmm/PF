@@ -185,10 +185,10 @@ workers = [
     ]
 
 workers.each do |data|
-  Worker.create!(
+  Worker.create(
     email: data[:email],
     last_name: data[:last_name],
     first_name: data[:first_name],
-    encrypted_password: data[:pasword]
+    password: data[:password]
     )
 end

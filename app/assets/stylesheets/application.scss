@@ -46,6 +46,16 @@ body {
   // left: 0;
   }
 
+  .introduction {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    font-weight: bold;
+    color: #ffffffb8;
+    font-size: 1.5em;
+
+  }
+
 .main_view img {
   width: 100%;
   }
@@ -73,6 +83,14 @@ body {
   background-color: #1e00c7;
   color: white;
   font-weight: bold;
+}
+.btn-info a {
+    color: #ffffff;
+}
+.btn-info {
+    color: #f00;
+    background-color: #3123ae;
+    border-color: #d7c8e3;
 }
 
 header {
@@ -102,6 +120,7 @@ ul {
 nav {
    margin: 0 0 0 auto;
 }
+
 
 
 .table-layout {
@@ -159,4 +178,12 @@ nav {
 }
 .tab-list {
   display: flex;
+}
+
+footer {
+  padding: 16px 0;
+  font-size: 14px;
+  text-align: center;
+  background-color: #483d8b;
+  color: #fdfdfe;
 }

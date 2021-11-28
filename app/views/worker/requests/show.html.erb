@@ -49,5 +49,5 @@
 
 	        <%= link_to "申請一覧に戻る", worker_requests_path, class: "btn btn-success m-3" %>
 	        <h4>申請の変更をしたい場合は、一度申請取り消しをしてください</h4>
-	        <%= link_to "申請取り消し", worker_requests_path, class: "btn btn-danger m-3" %>
+	        <%= link_to "申請取り消し", worker_requests_path, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger m-3" %>
 	</div>

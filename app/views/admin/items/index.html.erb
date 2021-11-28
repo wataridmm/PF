@@ -15,7 +15,21 @@
                 <td><%= item.id %></td>
                 <td><%= item.name %></td>
                 <td><%= item.comment %></td>
-                <td><%= item.is_active %></td>
+                <td>
+                    <% if item.is_active == true %>
+						<h5>
+							<span class="badge badge-primary">
+								使用可
+							</span>
+						</h5>
+						<% else %>
+						<h5>
+							<span class="badge badge-secondary">
+								使用不可
+							</span>
+						</h5>
+					<% end %>
+                </td>
                 <td><%= link_to "詳細", admin_item_path(item.id) %></td>
             </tr>
         </tbody>
