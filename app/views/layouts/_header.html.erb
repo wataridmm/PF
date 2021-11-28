@@ -30,39 +30,44 @@
           <div class="logo">
           <%= link_to 'V2', worker_top_path, class: "navbar-brand" %>
           </div>
-          <ul class="element">
-            <p>お疲れ様です、<%= current_worker.last_name %>さん!</p>
-            <li><%= link_to '申請一覧', worker_requests_path %></li>
-            <li><%= link_to 'イベント一覧', worker_events_path %></li>
-            <li><%= link_to '在庫状況', worker_item_stocks_path %></li>
-            <li><%= link_to 'ログアウト', destroy_worker_session_path, method: :delete %></li>
-          </ul>
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <ul class="element">
+              <p>お疲れ様です、<%= current_worker.last_name %>さん!</p>
+              <li><%= link_to '申請一覧', worker_requests_path %></li>
+              <li><%= link_to 'イベント一覧', worker_events_path %></li>
+              <li><%= link_to '在庫状況', worker_item_stocks_path %></li>
+              <li><%= link_to 'ログアウト', destroy_worker_session_path, method: :delete %></li>
+            </ul>
+          </nav>
         </div>
       </header>
     <% elsif customer_signed_in? %>
       <header>
         <div class="header-content">
           <%= link_to 'V2', root_path, class: "logo" %>
-          <ul class="element">
-            <p>ようこそ、<%= current_customer.name %>さん!</p>
-            <li><%= link_to 'イベント一覧', events_path %></li>
-            <li><%= link_to '会場一覧', venues_path %></li>
-            <li><%= link_to 'ログアウト', destroy_customer_session_path, method: :delete %></li>
-            <%= link_to 'ログアウト', destroy_worker_session_path, method: :delete %>
-          </ul>
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <ul class="element">
+              <p>ようこそ、<%= current_customer.name %>さん!</p>
+              <li><%= link_to 'イベント一覧', events_path %></li>
+              <li><%= link_to '会場一覧', venues_path %></li>
+              <li><%= link_to 'ログアウト', destroy_customer_session_path, method: :delete %></li>
+              <%= link_to 'ログアウト', destroy_worker_session_path, method: :delete %>
+            </ul>
+          </nav>
         </div>
       </header>
     <% else %>
       <header>
         <div class="header-content">
           <%= link_to 'V2', root_path, class: "logo" %>
+          <nav class="navbar navbar-expand-lg navbar-light">
           <ul class="element">
             <li><%= link_to 'イベント一覧', events_path %></li>
             <li><%= link_to '会場一覧', venues_path %></li>
             <li><%= link_to '新規登録', new_customer_registration_path %></li>
             <li><%= link_to 'ログイン', new_customer_session_path %></li>
-
           </ul>
+          </nav>
         </div>
       </header>
     <% end %>
