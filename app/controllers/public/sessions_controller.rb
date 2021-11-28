@@ -29,7 +29,7 @@ class Public::SessionsController < Devise::SessionsController
     @customer = Customer.find_by(email: params[:customer][:email].downcase)
     if @customer
       if (@customer.valid_password?(params[:customer][:password]) && (@customer.active_for_authentication? == false))
-        flash[:error] = "退職済です。"
+        flash[:error] = "退会済です。"
         redirect_to new_customer_session_path
       end
     else

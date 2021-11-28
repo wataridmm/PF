@@ -1,7 +1,7 @@
 class Admin::CustomersController < ApplicationController
   before_action :authenticate_admin!
   before_action :ensure_customer, only: [:edit, :index, :update]
-  
+
   def index
     @customers = Customer.all
   end
@@ -19,7 +19,7 @@ class Admin::CustomersController < ApplicationController
   private
 
   def ensure_customer
-    @customer = Customer.find(params[:id])
+
   end
 
   def customer_params

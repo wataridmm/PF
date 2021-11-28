@@ -1,7 +1,7 @@
 class Admin::EventsController < ApplicationController
   before_action :authenticate_admin!
   before_action :ensure_customer, only: [:edit, :index, :update, :new, :show, :update, :destroy]
-  
+
   def index
     @events = Event.all
   end
@@ -43,7 +43,7 @@ class Admin::EventsController < ApplicationController
   private
 
   def ensure_customer
-    @customer = Customer.find(params[:id])
+
   end
 
   def event_params

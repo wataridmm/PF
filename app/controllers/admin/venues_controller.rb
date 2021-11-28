@@ -40,7 +40,7 @@ class Admin::VenuesController < ApplicationController
   private
   
   def ensure_customer
-    @customer = Customer.find(params[:id])
+    
   end
 
   def venue_params

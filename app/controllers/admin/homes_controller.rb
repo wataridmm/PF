@@ -11,8 +11,9 @@ class Admin::HomesController < ApplicationController
   end
 
   private
+
   def ensure_customer
-    @customer = Customer.find(params[:id])
+
   end
 
 end

@@ -64,6 +64,10 @@ class Worker::RequestsController < ApplicationController
 
   private
 
+  def ensure_customer
+    @worker = Worker.find(params[:id])
+  end
+
   def request_params
       params.require(:request).permit(:status)
   end
