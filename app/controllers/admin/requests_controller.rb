@@ -1,6 +1,6 @@
 class Admin::RequestsController < ApplicationController
   def index
-    @requests = Request.all
+    @requests = Request.page(params[:page]).reverse_order
 
   end
 

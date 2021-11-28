@@ -30,6 +30,7 @@
             </tr>
         </tbody>
         <% end %>
+        <%= paginate @requests %>
     </table>
     <%= link_to "管理者トップ", admin_top_path,class: "btn btn-primary" %>
     </div>
