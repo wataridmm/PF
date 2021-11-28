@@ -7,10 +7,10 @@
 #   Character.find_or_create_by(name: 'Luke', movie: movies.first)
 
 
-Admin.create!(
-  email: "a@a",
-  password: "aaaaaa"
-  )
+# Admin.create!(
+#   email: "a@a",
+#   password: "aaaaaa"
+  # )
 
 
 Prefecture.find_or_create_by(name: '東京', slug: 'tokyo')
@@ -20,16 +20,6 @@ Prefecture.find_or_create_by(name: '埼玉', slug: 'saitama')
 Prefecture.find_or_create_by(name: '栃木', slug: 'tochigi')
 Prefecture.find_or_create_by(name: '茨城', slug: 'ibaraki')
 Prefecture.find_or_create_by(name: '群馬', slug: 'gunma')
-
-
-#Venues.find_or_create_by(prefecture_id: 1, name: "", station: "", is_active: true)
-
-
-#Venue.find_or_create_by(prefecture_id: 3, name: "", station: "海浜幕張", is_active: true)
-#Venue.find_or_create_by(prefecture_id: 3, name: "", station: "海浜幕張", is_active: true)
-
-
-
 
 venues = [
     {pid: 1, name: 'TSUTAYA O-EAST', station: '渋谷'},
@@ -71,9 +61,9 @@ venues = [
 
     {pid: 1, name: '新宿ReNY', station: '新宿・西新宿・都庁前'},
     {pid: 1, name: '新国立劇場', station: '新宿・西新宿・都庁前'},
-    
-    
-    
+
+
+
     {pid: 1, name: 'Zepp Tokyo', station: '青海・東京テレポート'},
     {pid: 1, name: 'Zepp Diver City', station: '台場・東京テレポート'},
     {pid: 1, name: '東京ビッグサイト', station: '国際展示場・東京ビッグサイト'},
@@ -81,7 +71,7 @@ venues = [
     {pid: 1, name: '新木場スタジオコースト', station: '新木場'},
     {pid: 1, name: 'オリンパスホール八王子', station: '八王子'},
     {pid: 1, name: '幕張メッセ', station: '海浜幕張'},
-    {pid: 1, name: '人見記念講堂', station: '三軒茶屋'},
+    {pid: 1, name: '人見記念講堂', station: '三軒茶屋'}
 ]
 
 venues.each do |data|
@@ -107,8 +97,8 @@ items = [
   {name: '延長コード3m', comment: '', team: 0},
   {name: '延長コード5m', comment: '', team: 0},
   {name: 'ゴミ袋セット', comment: '20枚単位', team: 0},
-  {name: 'iXプリンター', comment: 'デフォルトでコピー用紙100枚ずつ入ってます', team: 0},
-  {name: 'iPプリンター', comment: 'デフォルトでコピー用紙100枚入ってます', team: 0},
+  {name: 'iXプリンター', comment: 'デフォルトでコピー用紙100枚ずつが入っています', team: 0},
+  {name: 'iPプリンター', comment: 'デフォルトでコピー用紙100枚が入っています', team: 0},
   {name: '追加A3コピー用紙', comment: '', team: 0},
   {name: '追加A4コピー用紙', comment: '', team: 0},
   {name: '案内ボックス大', comment: '', team: 0},
@@ -172,5 +162,33 @@ items.each do |data|
     comment: data[:comment],
     team: data[:team],
     is_active: true
+    )
+end
+
+workers = [
+    {last_name: '令和', first_name: '太郎', email: 'a@a', password: 'aaaaaa'},
+    {last_name: '林檎', first_name: '夏子', email: 'b@b', password: 'aaaaaa'},
+    {last_name: '平成', first_name: '純也', email: 'c@c', password: 'aaaaaa'},
+    {last_name: '田中', first_name: '翔平', email: 'd@d', password: 'aaaaaa'},
+    {last_name: '鈴木', first_name: '桃子', email: 'e@e', password: 'aaaaaa'},
+    {last_name: '梨野', first_name: '幸平', email: 'f@f', password: 'aaaaaa'},
+    {last_name: '松風', first_name: '寿郎', email: 'g@g', password: 'aaaaaa'},
+    {last_name: '多田', first_name: '美香', email: 'h@h', password: 'aaaaaa'},
+    {last_name: '響尾', first_name: '二郎', email: 'i@i', password: 'aaaaaa'},
+    {last_name: '斉藤', first_name: '元博', email: 'j@j', password: 'aaaaaa'},
+    {last_name: '遠田', first_name: '花果', email: 'k@k', password: 'aaaaaa'},
+    {last_name: '餅野', first_name: '月子', email: 'l@l', password: 'aaaaaa'},
+    {last_name: '吉田', first_name: '三郎', email: 'm@m', password: 'aaaaaa'},
+    {last_name: '高橋', first_name: '檸檬', email: 'n@n', password: 'aaaaaa'},
+    {last_name: '伊藤', first_name: '柿男', email: 'o@o', password: 'aaaaaa'},
+    {last_name: '渡辺', first_name: '心愛', email: 'p@p', password: 'aaaaaa'}
+    ]
+
+workers.each do |data|
+  Worker.create!(
+    email: data[:email],
+    last_name: data[:last_name],
+    first_name: data[:first_name],
+    encrypted_password: data[:pasword]
     )
 end

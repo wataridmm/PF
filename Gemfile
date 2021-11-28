@@ -77,4 +77,4 @@ gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
 
 gem 'cocoon'
-
+gem 'faker'

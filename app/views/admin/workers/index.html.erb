@@ -1,5 +1,5 @@
 <div class="container p-5">
-    <h2>社員一覧</h2>
+    <h1>社員一覧</h1>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -16,13 +16,25 @@
                 <td><%= worker.id %></td>
                 <td><%= worker.last_name %></td>
                 <td><%= worker.first_name %></td>
-                <td><%= worker.is_deleted %></td>
+                <td><% if worker.is_deleted == true %>
+							<h5>
+								<span class="badge badge-secondary">
+									退職
+								</span>
+							</h5>
+							<% else %>
+							<h5>
+								<span class="badge badge-primary">
+									在籍
+								</span>
+							</h5>
+						<% end %></td>
                 <td><%= worker.email %></td>
                 <td><%= link_to "詳細", admin_worker_path(worker.id) %></td>
             </tr>
         </tbody>
         <% end %>
     </table>
-    <h2><%= link_to "社員新規登録", admin_workers_new_path %></h2>
-    <h2><%= link_to "管理者トップ", admin_top_path %></h2>
+    <%= link_to "社員新規登録", new_admin_worker_path, class: "btn btn-success" %>
+    <%= link_to "管理者トップ", admin_top_path, class: "btn btn-primary" %>
 </div>

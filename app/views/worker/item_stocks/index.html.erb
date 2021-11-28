@@ -6,6 +6,7 @@
                 <th>備品ID</th>
                 <th>備品名</th>
                 <th>在庫数</th>
+                <th>ステータス</th>
                 <th></th>
             </tr>
         </thead>
@@ -15,11 +16,12 @@
                 <td><%= item_stock.item.id %></td>
                 <td><%= item_stock.item.name %></td>
                 <td><%= item_stock.stock %></td>
-                <td><%= link_to "詳細", admin_item_stock_path(item_stock.id) %></td>
+                <td><%= item_stock.status %></td>
             </tr>
         </tbody>
         <% end %>
     </table>
-    <%= link_to "在庫新規登録", new_admin_item_stock_path, class: "btn btn-success" %>
-    <%= link_to "管理者トップ", admin_top_path, class: "btn btn-primary" %>
+    <%= link_to "社員トップ", worker_top_path, class: "btn btn-primary" %>
 </div>
+
+<!-- <span><%#= item_stock.is_active %></span> -->

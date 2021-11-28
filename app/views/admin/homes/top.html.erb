@@ -1,5 +1,50 @@
-<h1>Admin::Homes#top</h1>
-<p>Find me in app/views/admin/homes/top.html.erb</p>
+<div class="container p-5">
+    <h1>新規申請一覧</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>申請ID</th>
+                <th>申請社員</th>
+                <th>日程</th>
+                <th>現場名</th>
+                <th>会場名</th>
+                <th>申請日時</th>
+                <th>申請ステータス</th>
+                <th></th>
+            </tr>
+        </thead>
+        <% @requests.each do |request| %>
+        <% dw = ["日", "月", "火", "水", "木", "金", "土"] %>
+        <tbody>
+            <tr>
+                <td><%= request.id %></td>
+                <td><%= request.worker.last_name %></td>
+                <td><%= request.event.date.strftime("%Y/%m/%d(#{dw[request.wday]}) %H:%M")  %></td>
+                <td><%= request.event.name %></td>
+                <td><%= request.event.venue.name %></td>
+                <td><%= request.created_at.strftime("%Y/%m/%d(#{dw[request.created_at.wday]}) %H:%M") %></td>
+                <td><%= request.status %></td>
+                <td><%= link_to "詳細", admin_request_path(request.id) %></td>
+            </tr>
+        </tbody>
+        <% end %>
+    </table>
+    <%= link_to "管理者トップ", admin_top_path, class: "btn btn-success" %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <h2><%= link_to "社員一覧", admin_workers_path %></h2>

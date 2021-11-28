@@ -23,10 +23,23 @@
 		  </tr>
 		  <tr>
 		  	<th>ステータス</th>
-		  	<td><%= @venue.status %></td>
+		  	<td><% if @venue.is_active == true %>
+							<h5>
+								<span class="badge badge-primary">
+									稼働中
+								</span>
+							</h5>
+							<% else %>
+							<h5>
+								<span class="badge badge-secondary">
+									閉鎖中
+								</span>
+							</h5>
+							<% end %>
+					</td>
 		  </tr>
  </table>
 				<%= link_to "編集", edit_admin_venue_path(@venue.id) , class: "btn btn-success" %>
 				<%= link_to "削除", admin_venue_path(@venue.id), method: :delete, "data-confirm" => "削除してもよろしいですか？", class: "btn btn-danger" %>
-	<%= link_to "会場一覧に戻る", admin_venues_path %>
+				<%= link_to "会場一覧に戻る", admin_venues_path, class: "btn btn-primary" %>
 	</div>
