@@ -46,6 +46,16 @@ body {
   // left: 0;
   }
 
+  .introduction {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    font-weight: bold;
+    color: #ffffffb8;
+    font-size: 1.5em;
+
+  }
+
 .main_view img {
   width: 100%;
   }
@@ -112,6 +122,7 @@ nav {
 }
 
 
+
 .table-layout {
   border: 1px solid lightgray ;
   padding: 10px;
@@ -167,4 +178,12 @@ nav {
 }
 .tab-list {
   display: flex;
+}
+
+footer {
+  padding: 16px 0;
+  font-size: 14px;
+  text-align: center;
+  background-color: #483d8b;
+  color: #fdfdfe;
 }
