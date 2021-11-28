@@ -16,7 +16,7 @@
 				<td><%= @item_stock.stock %></td>
 				<td><%= @item_stock.status %></td>
 				<td><%= link_to "編集", edit_admin_item_stock_path(@item_stock.id) , class: "btn btn-success" %></td>
-				<td><%= link_to "削除", admin_item_stock_path(@item_stock.id), method: :delete, "data-confirm" => "削除してもよろしいですか？在庫として登録されている場合はエラーになりますので、在庫情報を消してからOKを押してください", class: "btn btn-danger" %></td>
+				<td><%= link_to "削除", admin_item_stock_path(@item_stock.id), method: :delete, "data-confirm" => "削除してもよろしいですか？", class: "btn btn-danger" %></td>
 			</tr>
 		</tbody>
 	</table>
