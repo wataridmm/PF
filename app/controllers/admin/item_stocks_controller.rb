@@ -46,7 +46,7 @@ class Admin::ItemStocksController < ApplicationController
   private
 
   def ensure_customer
-    @customer = Customer.find(params[:id])
+    # @customer = Customer.find(params[:id])
   end
 
   def item_stock_params
