@@ -1,9 +1,13 @@
 <div class="container p-5">
+  <div class="notifications">
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: key) %>
+    <% end %>
+  </div>
   <h1>会場詳細</h1>
   <table class="table table-striped">
 		  <tr>
   		  	<th>会場名</th>
-
   		  	<td><%= @venue.name %></td>
 		  </tr>
 		  <tr>

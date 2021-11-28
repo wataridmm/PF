@@ -6,9 +6,9 @@
 
         <div class="header-content">
           <div>
-            <!--<%#= link_to admin_top_path, class: "logo" do %>-->
-            <!--   <%#= link_to image_tag('/images/logo/logo_transparent.png') %>-->
-            <!--<%# end %>-->
+            <%= link_to admin_top_path, class: "logo" do %>
+               <%= link_to image_tag("/assets/logo_transparent.png") %>
+            <% end %>
           </div>
           <nav class="navbar navbar-expand-lg navbar-light">
           <ul class="element">
@@ -44,7 +44,12 @@
     <% elsif customer_signed_in? %>
       <header>
         <div class="header-content">
-          <%= link_to 'V2', root_path, class: "logo" %>
+          <div id="head-logo">
+            <%= link_to root_path, class: "logo" do %>
+                <img src="/assets/logo/logo_transparent.png" height="80"  alt="ロゴの名前">
+               <%#= link_to image_tag("/assets/logo/logo_transparent.png") %>
+            <% end %>
+          </div>
           <nav class="navbar navbar-expand-lg navbar-light">
             <ul class="element">
               <p>ようこそ、<%= current_customer.name %>さん!</p>

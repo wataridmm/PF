@@ -4,8 +4,12 @@ class Public::VenueCommentsController < ApplicationController
     venue = Venue.find(params[:venue_id])
     comment = current_customer.venue_comments.new(venue_comment_params)
     comment.venue_id = venue.id
-    comment.save
-    redirect_to venue_path(venue)
+    if  comment.save
+      redirect_to venue_path(venue), notice: 'コメントを送信しました。'
+    else
+      flash.now[:alert] = 'コメントを入力してください。'
+7     render venue_path
+    end
   end
 
   def destroy
