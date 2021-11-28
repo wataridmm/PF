@@ -1,0 +1,33 @@
+<div class="container p-5">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>会場ID</th>
+                <th>会場名</th>
+                <th>県名</th>
+                <th>最寄駅</th>
+                <th>会場説明</th>
+                <th>ステータス</th>
+                <th>コメント</th>
+            </tr>
+        </thead>
+        <% @venues.each do |venue| %>
+        <tbody>
+            <tr>
+                <td><%= venue.id %></td>
+                <td><%= venue.name %></td>
+                <td><%= venue.prefecture.name %></td>
+                <td><%= venue.station %></td>
+                <td><%= venue.introduction %></td>
+                <td><%= venue.is_active %></td>
+                <td><%= venue.status %></td>
+                <td><%= link_to "詳細", admin_venue_path(venue.id) %></td>
+            </tr>
+        </tbody>
+        <% end %>
+    </table>
+    <%= link_to "会場新規登録", new_admin_venue_path, class: "btn btn-success" %>
+    <%= link_to "管理者トップ", admin_top_path, class: "btn btn-primary" %>
+</div>
+
+<!-- <span><%#= venue.is_active %></span> -->

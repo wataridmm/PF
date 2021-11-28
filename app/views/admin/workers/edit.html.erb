@@ -1,0 +1,29 @@
+<div class="container p-5">
+  <h1>社員編集画面</h1>
+  <h4>社員ID<%= @worker.id %></h4>
+  <%= form_with model:@worker, url:"/admin/workers/#{@worker.id}", local:true do |f| %>
+  <table class="table table-bordered">
+    <tr>
+      <th>姓</th>
+      <td><%= f.text_field :last_name %></td>
+    </tr>
+    <tr>
+      <th>名</th>
+      <td><%= f.text_field :first_name %></td>
+    </tr>
+    <tr>
+      <th>メールアドレス</th>
+      <td><%= f.text_field :email %></td>
+    </tr>
+    <tr>
+      <th>ステータス</th>
+      <td><%= f.select :is_deleted, [['在籍',0],['退職',1]], { include_blank: true, selected: 0 } %></td>
+    </tr>
+  </table>
+  <div class="row p-3">
+  <%= f.submit '更新',class: "btn btn-primary" %>
+  <% end %>
+  <%= link_to "戻る", admin_worker_path(@worker.id), class: "btn btn-success" %>
+  </div>
+
+</div>

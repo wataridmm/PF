@@ -1,0 +1,21 @@
+ <%= form_with(model: @request,  url:'/worker/requests', local: true) do |f| %>
+
+
+
+	<%= f.text_field :status %>
+
+	<%= f.fields_for :request_details do |op| %>
+
+
+							<!--<td><%#= f.label :item, "備品選択" %></td>-->
+							<!--<td><%#= f.collection_select :item_id, Item.all, :id, :name, prompt: "選択してください" %></td>-->
+
+							<%= link_to_add_association 'add', f, :request_details %>
+
+
+
+		<div class="flex align-center pl5">
+			<%= f.submit "作成", class: "btn btn-primary" %>
+		</div>
+	<% end %>
+	<% end %>

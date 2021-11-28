@@ -1,0 +1,158 @@
+
+
+<% if admin_signed_in? %>
+      <p class="information">管理者としてログイン中</p>
+      <header class="admin_header">
+
+        <div class="header-content">
+          <div id="head-logo">
+            <%= link_to admin_top_path, class: "logo" do %>
+                <img src="/assets/logo/logo_transparent.png" height="80"  alt="logo">
+            <% end %>
+          </div>
+          <nav class="navbar navbar-expand-lg navbar-light">
+          <ul class="element">
+            <li>
+              <button type="button" class="btn btn-info">
+              <%= link_to '在庫管理', admin_item_stocks_path %>
+            </button>
+            </li>
+            <li>
+              <button type="button" class="btn btn-info">
+              <%= link_to '申請一覧', admin_requests_path %>
+            </button>
+          </li>
+            <li>
+              <button type="button" class="btn btn-info">
+                <%= link_to 'イベント一覧', admin_events_path %>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="btn btn-info">
+                <%= link_to '会場一覧', admin_venues_path %>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="btn btn-info">
+                <%= link_to '備品一覧', admin_items_path %>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="btn btn-info">
+                <%= link_to '社員一覧', admin_workers_path %>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="btn btn-info">
+                <%= link_to '会員一覧', admin_customers_path %>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="btn btn-info">
+                <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete %>
+              </button>
+            </li>
+          </ul>
+          </nav>
+        </div>
+      </header>
+    <% elsif worker_signed_in? %>
+    <p class="worker_head">お疲れ様です、<%= current_worker.last_name %>さん!</p>
+      <header class="worker_header">
+        <div class="header-content">
+          <div id="head-logo">
+            <%= link_to worker_top_path, class: "logo" do %>
+                <img src="/assets/logo/logo_transparent.png" height="80"  alt="logo">
+            <% end %>
+          </div>
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <ul class="element">
+              <li>
+                <button type="button" class="btn btn-info">
+                  <%= link_to '申請一覧', worker_requests_path %>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="btn btn-info">
+                  <%= link_to 'イベント一覧', worker_events_path %>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="btn btn-info">
+                  <%= link_to '在庫状況', worker_item_stocks_path %>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="btn btn-info">
+                  <%= link_to 'ログアウト', destroy_worker_session_path, method: :delete %>
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    <% elsif customer_signed_in? %>
+      <header>
+        <div class="header-content">
+          <div id="head-logo">
+            <%= link_to root_path, class: "logo" do %>
+                <img src="/assets/logo/logo_transparent.png" height="80"  alt="logo">
+            <% end %>
+          </div>
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <ul class="element">
+              <p>ようこそ、<%= current_customer.name %>さん!</p>
+              <li>
+                <button type="button" class="btn btn-info">
+                  <%= link_to 'イベント一覧', events_path %>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="btn btn-info">
+                  <%= link_to '会場一覧', venues_path %>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="btn btn-info">
+                  <%= link_to 'ログアウト', destroy_customer_session_path, method: :delete %>
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    <% else %>
+      <header>
+        <div class="header-content">
+           <div id="head-logo">
+            <%= link_to root_path, class: "logo" do %>
+                <img src="/assets/logo/logo_transparent.png" height="80"  alt="logo">
+            <% end %>
+          </div>
+          <nav class="navbar navbar-expand-lg navbar-light">
+          <ul class="element">
+            <li>
+              <button type="button" class="btn btn-info">
+                <%= link_to 'イベント一覧', events_path %>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="btn btn-info">
+                <%= link_to '会場一覧', venues_path %>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="btn btn-info">
+                <%= link_to '新規登録', new_customer_registration_path %>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="btn btn-info">
+                <%= link_to 'ログイン', new_customer_session_path %>
+              </button>
+            </li>
+          </ul>
+          </nav>
+        </div>
+      </header>
+    <% end %>

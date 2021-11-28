@@ -1,0 +1,26 @@
+<div class="container p-5">
+  <h1>備品編集画面</h1>
+  <h4>備品ID:<%= @item.id %></h4>
+  <%= form_with model:@item, url:"/admin/items/#{@item.id}", local:true do |f| %>
+  <table class="table table-bordered">
+    <tr>
+      <th>備品名</th>
+      <td><%= f.text_field :name %></td>
+    </tr>
+    <tr>
+      <th>説明</th>
+      <td><%= f.text_field :comment %></td>
+    </tr>
+    <tr>
+      <th>ステータス</th>
+      <td><%= f.select :is_active, [['非稼働',0],['稼働',1]], { include_blank: true, selected: 0 } %></td>
+    </tr>
+  </table>
+  <div class="row p-3">
+  <%= f.submit '更新',class: "btn btn-primary" %>
+  </div>
+  <% end %>
+  <%= link_to "戻る", admin_item_path(@item.id), class: "btn btn-success" %>
+</div>
+
+ <%= link_to 'ログアウトリンク', destroy_worker_session_path, method: :delete %>

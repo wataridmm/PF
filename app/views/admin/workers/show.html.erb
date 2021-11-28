@@ -1,0 +1,66 @@
+<div class="container p-5">
+  <h1>社員詳細</h1>
+	<table class="table table-striped">
+	  <thead>
+      <tr>
+          <th>社員ID</th>
+          <th>姓</th>
+          <th>名</th>
+          <th>ステータス</th>
+          <th>メールアドレス</th>
+          <th></th>
+      </tr>
+    </thead>
+		<tbody>
+			<tr>
+				<td><%= @worker.id %></td>
+				<td><%= @worker.last_name %></td>
+				<td><%= @worker.first_name %></td>
+				<td><% if @worker.is_deleted == true %>
+							<h5>
+								<span class="badge badge-secondary">
+									退職
+								</span>
+							</h5>
+							<% else %>
+							<h5>
+								<span class="badge badge-primary">
+									在籍
+								</span>
+							</h5>
+						<% end %>
+				</td>
+				<td><%= @worker.email %></td>
+				<td><%= link_to "編集", edit_admin_worker_path(@worker.id) , class: "btn btn-success" %></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+	<%= link_to "社員一覧に戻る", admin_workers_path, class: "btn btn-success" %>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<h1>社員詳細</h1>-->
+<!--<h3><%#= @worker.id %></h3>-->
+<!--<h3><%#= @worker.last_name %></h3>-->
+<!--<h3><%#= @worker.introduction %></h3>-->
+<!--<h3><%#= @worker.status %></h3>-->
+<!--<h3><%#= @venue.is_active %></h3>-->
+
+<!--<%#= link_to "編集", admin_edit_venue_path(@venue.id) %>-->
+<!--<%#= link_to "削除", admin_destroy_venue_path(@venue.id), method: :delete, "data-confirm" => "削除してもよろしいですか？" %>-->
+<!--<%#= link_to "社員一覧に戻る", admin_venues_index_path %>-->

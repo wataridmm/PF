@@ -1,0 +1,39 @@
+<div class="container p-5">
+      <h1>申請画面</h1>
+      <%#= form_with model: @request, url:'/worker/requests', local:true do |f| %>
+     <%= form_with(model: @request,  url:'/worker/requests', local: true) do |f| %>
+        <table class="table table-bordered">
+    		<tbody>
+    			<tr>
+    				<td><%= f.label :event, "現場選択" %></td>
+    				<td><%= f.collection_select :event_id, Event.where(worker_id: nil), :id, :name, prompt: "選択してください" %></td>
+    			</tr>
+    		</tbody>
+    	</table>
+        <div class="parents">
+            <%= f.fields_for :request_details do |t| %>
+            <div style="display: flex; width: 100%">
+    		    <h4 class="table-layout" >
+    			備品名
+    		    </h4>
+      	        <h4 class="table-layout">
+    			個数
+    		    </h4>
+    	    </div>
+                <%= render 'request_detail_fields', f: t %>
+                <% end %>
+            <div class="links p-2">
+                	<%= link_to_add_association 'add', f, :request_details, class: "btn btn-warning" %>
+            </div>
+        </div>
+        <div class="actions m-2">
+            <%= f.submit "申請" %>
+        </div>
+            <% end %>
+
+    	<%= link_to "申請一覧", worker_requests_path, class: "btn btn-success m-2" %>
+    	<%= link_to "社員トップ", worker_top_path, class: "btn btn-primary m-2" %>
+</div>
+
+
+

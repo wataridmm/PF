@@ -1,0 +1,45 @@
+<div class="container p-5">
+  <div class="notifications">
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: key) %>
+    <% end %>
+  </div>
+  <h1>会場詳細</h1>
+  <table class="table table-striped">
+		  <tr>
+  		  	<th>会場名</th>
+  		  	<td><%= @venue.name %></td>
+		  </tr>
+		  <tr>
+  		  	<th>県名</th>
+  		  	<td><%= @venue.prefecture.name %></td>
+		  </tr>
+		  <tr>
+  		  	<th>最寄駅</th>
+  		  	<td><%= @venue.station %></td>
+		  </tr>
+  </table>
+		<%= link_to "会場一覧に戻る", venues_path, class:'btn btn-success' %>
+		<br></br>
+		<% if customer_signed_in? %>
+    <div>
+        <%= form_with(model:[@venue, @venue_comment], local: true) do |f| %>
+            <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに" %>
+            <%= f.submit "送信する" %>
+        <% end %>
+    </div>
+    <% end %>
+    <p>コメント件数：<%= @venue.venue_comments.count %></p>
+    <% @venue.venue_comments.each do |venue_comment| %>
+        <% dw = ["日", "月", "火", "水", "木", "金", "土"] %>
+        <%= venue_comment.customer.name %>
+        <%= venue_comment.created_at.strftime("%Y/%m/%d(#{dw[venue_comment.created_at.wday]}) %H:%M") %><%= venue_comment.comment %>
+          <% if venue_comment.customer == current_customer %>
+              <div>
+                  <%= link_to "削除", venue_venue_comment_path(venue_comment.venue, venue_comment), method: :delete %>
+              </div>
+          <% end %>
+    <% end %>
+
+
+</div>

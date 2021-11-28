@@ -1,0 +1,24 @@
+<div class="container p-5">
+  <h1>在庫詳細</h1>
+	<table class="table table-striped">
+	  <thead>
+      <tr>
+          <th>在庫ID</th>
+          <th>備品名</th>
+          <th>在庫数</th>
+          <th>ステータス</th>
+      </tr>
+    </thead>
+		<tbody>
+			<tr>
+				<td><%= @item_stock.id %></td>
+				<td><%= @item_stock.item.name %></td>
+				<td><%= @item_stock.stock %></td>
+				<td><%= @item_stock.status %></td>
+				<td><%= link_to "編集", edit_admin_item_stock_path(@item_stock.id) , class: "btn btn-success" %></td>
+				<td><%= link_to "削除", admin_item_stock_path(@item_stock.id), method: :delete, "data-confirm" => "削除してもよろしいですか？", class: "btn btn-danger" %></td>
+			</tr>
+		</tbody>
+	</table>
+	<%= link_to "在庫一覧に戻る", admin_item_stocks_path %>
+	</div>
