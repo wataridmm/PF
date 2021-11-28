@@ -33,7 +33,7 @@ class Admin::WorkersController < ApplicationController
   private
 
   def ensure_customer
-    @customer = Customer.find(params[:id])
+    # @customer = Customer.find(params[:id])
   end
 
   def worker_params
