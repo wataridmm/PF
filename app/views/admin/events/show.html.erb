@@ -15,10 +15,10 @@
 				<td><%= @event.date %></td>
 				<td><%= @event.name %></td>
 				<td><%#= @event.venue.name %></td>
-				<td><%= link_to "編集", admin_edit_event_path(@event.id) , class: "btn btn-success" %></td>
-				<td><%= link_to "削除", admin_destroy_event_path(@event.id), method: :delete, "data-confirm" => "削除してもよろしいですか？在庫として登録されている場合はエラーになりますので、在庫情報を消してからOKを押してください", class: "btn btn-danger" %></td>
+				<td><%= link_to "編集", edit_admin_event_path(@event.id) , class: "btn btn-success" %></td>
+				<td><%= link_to "削除", admin_event_path(@event.id), method: :delete, "data-confirm" => "削除してもよろしいですか？", class: "btn btn-danger" %></td>
 			</tr>
 		</tbody>
 	</table>
-	<%= link_to "イベント一覧に戻る", admin_events_path %>
+	<%= link_to "イベント一覧に戻る", admin_events_path, class: "btn btn-primary" %>
 	</div>
