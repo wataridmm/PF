@@ -51,7 +51,7 @@ Venue Voyage
 
 ## チャレンジ要素一覧
 
-<https://docs.google.com/spreadsheets/d/1JdB1Yyvz4FAzlOMquIV2zr5xoF4R-sM9w9uTw3DODZwo/edit?usp=sharing>
+<https://docs.google.com/spreadsheets/d/1ckU4USu5iadk1l0ItV3wrXfUi_v0avOjjRCQj23He3s/edit#gid=0>
 
 ## 開発環境
 
