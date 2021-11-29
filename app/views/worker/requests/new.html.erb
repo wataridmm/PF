@@ -31,6 +31,29 @@
         </div>
             <% end %>
 
+    <h1>在庫状況</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>備品ID</th>
+                <th>備品名</th>
+                <th>在庫数</th>
+                <th>ステータス</th>
+                <th></th>
+            </tr>
+        </thead>
+        <% @item_stocks.each do |item_stock| %>
+        <tbody>
+            <tr>
+                <td><%= item_stock.item.id %></td>
+                <td><%= item_stock.item.name %></td>
+                <td><%= item_stock.stock %></td>
+                <td><%= item_stock.status %></td>
+            </tr>
+        </tbody>
+        <% end %>
+    </table>
+
     	<%= link_to "申請一覧", worker_requests_path, class: "btn btn-success m-2" %>
     	<%= link_to "社員トップ", worker_top_path, class: "btn btn-primary m-2" %>
 </div>

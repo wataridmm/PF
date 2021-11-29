@@ -36,9 +36,9 @@ class Admin::ItemsController < ApplicationController
   end
 
   private
-  
+
   def ensure_customer
-    
+
   end
 
   def item_params
