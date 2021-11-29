@@ -4,6 +4,7 @@ class Worker::RequestsController < ApplicationController
 
 
   def new
+    @item_stocks = ItemStock.all
     @request = Request.new
     @request.request_details.build
   end
