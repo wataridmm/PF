@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2021_12_04_114922) do
   end
 
   create_table "event_comments", force: :cascade do |t|
+    t.integer "event_id", null: false
     t.integer "customer_id"
     t.text "comment", null: false
     t.datetime "created_at", null: false
