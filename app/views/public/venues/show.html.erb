@@ -38,6 +38,7 @@
               <div>
                   <%= link_to "削除", venue_venue_comment_path(venue_comment.venue, venue_comment), method: :delete %>
               </div>
+              <p class="sentiment-score">本文の感情分析スコア[<%= venue_comment.score %>]</p>
           <% end %>
     <% end %>
 
