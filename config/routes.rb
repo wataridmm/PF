@@ -33,7 +33,9 @@ Rails.application.routes.draw do
 
   scope module: :public do
     root 'customers#top'
-    resources :events, only: [:index, :show]
+    resources :events, only: [:index, :show] do
+      resources :event_comments, only: [:create, :destroy]
+    end
       resources :venues, only: [:index, :show] do
       resources :venue_comments, only: [:create, :destroy]
     end

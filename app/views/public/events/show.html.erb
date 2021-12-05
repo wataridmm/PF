@@ -20,4 +20,28 @@
   	  </tr>
   	</table>
 	<%= link_to "イベント一覧に戻る", events_path, class: "btn btn-primary" %>
+	<% if customer_signed_in? %>
+    <div>
+        <%= form_with(model:[@event, @event_comment], local: true) do |f| %>
+            <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに" %>
+            <%= f.submit "送信する" %>
+        <% end %>
+    </div>
+    <% end %>
+
+    <p>コメント件数：<%= @event.event_comments.count %></p>
+    <% @event.event_event_comments.each do |event_comment| %>
+        <% dw = ["日", "月", "火", "水", "木", "金", "土"] %>
+        <%= event_comment.customer.name %>
+        <%= event_comment.created_at.strftime("%Y/%m/%d(#{dw[event_comment.created_at.wday]}) %H:%M") %><%= event_comment.comment %>
+          <% if event_comment.customer == current_customer %>
+              <div>
+                  <%= link_to "削除", event_event_comment_path(event_comment.event, event_comment), method: :delete %>
+              </div>
+              <p class="sentiment-score">本文の感情分析スコア[<%= event_comment.score %>]</p>
+          <% end %>
+    <% end %>
+
+
+
 </div>
