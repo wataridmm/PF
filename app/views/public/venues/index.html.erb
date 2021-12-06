@@ -6,6 +6,7 @@
                 <th>会場名</th>
                 <th>県名</th>
                 <th>最寄駅</th>
+                <th>コメント解析の平均点</th>
             </tr>
         </thead>
         <% @venues.each do |venue| %>
@@ -18,6 +19,7 @@
                 </td>
                 <td><%= venue.prefecture.name %></td>
                 <td><%= venue.station %></td>
+                <td><%= venue.venue_comments.average(:score)&.round(2) %></td>
             </tr>
         </tbody>
         <% end %>

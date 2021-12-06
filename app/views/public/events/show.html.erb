@@ -30,7 +30,7 @@
     <% end %>
 
     <p>コメント件数：<%= @event.event_comments.count %></p>
-    <% @event.event_event_comments.each do |event_comment| %>
+    <% @event.event_comments.each do |event_comment| %>
         <% dw = ["日", "月", "火", "水", "木", "金", "土"] %>
         <%= event_comment.customer.name %>
         <%= event_comment.created_at.strftime("%Y/%m/%d(#{dw[event_comment.created_at.wday]}) %H:%M") %><%= event_comment.comment %>
