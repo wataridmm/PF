@@ -5,6 +5,7 @@ class Customer < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
         has_many :venue_comments, dependent: :destroy
+        has_many :event_comments, dependent: :destroy
 
   def active_for_authentication?
     super && (self.is_deleted == false)

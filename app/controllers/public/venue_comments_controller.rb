@@ -6,6 +6,8 @@ class Public::VenueCommentsController < ApplicationController
     @venue = Venue.find(params[:venue_id])
     comment = current_customer.venue_comments.new(venue_comment_params)
     comment.venue_id = @venue.id
+    # API用　投稿したコメントをAPI側に渡してる
+    comment.score = Language.get_data(comment.comment)
     if  comment.save
       redirect_to venue_path(@venue), notice: 'コメントを投稿しました。'
     else
