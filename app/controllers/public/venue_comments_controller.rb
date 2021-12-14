@@ -34,8 +34,4 @@ class Public::VenueCommentsController < ApplicationController
   def venue_comment_params
     params.require(:venue_comment).permit(:comment)
   end
-
-
-
-
 end
