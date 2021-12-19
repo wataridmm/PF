@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   namespace :worker do
     resources :requests
     resources :item_stocks, only: [:index]
@@ -16,7 +15,6 @@ Rails.application.routes.draw do
     resources :requests, only: [:index, :show, :update]
     resources :workers
     resources :venues
-
   end
   devise_for :worker, skip: [:passwords] , controllers: {
     registrations: "worker/registrations",
@@ -39,7 +37,6 @@ Rails.application.routes.draw do
       resources :venues, only: [:index, :show] do
       resources :venue_comments, only: [:create, :destroy]
     end
-
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
